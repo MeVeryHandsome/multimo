@@ -88,10 +88,10 @@ PostgreSQL 内置的全文检索不支持中文分词，pgvector 镜像里也没
 | 指标 | 数据 | 计算方式 |
 | :--- | :--- | :--- |
 | 数据类型 ≥3 | testdata 各格式样本 | 解析成功的格式数 |
-| 关键帧自动标注一致性 ≥40% | VisDrone2019-VID val | VLM 框与标注按 IoU≥0.5 匹配，再比类别语义相似度 |
-| 目标识别准确率 ≥85% / 漏检 ≤5% | VisDrone2019-DET val 抽样 | TP/(TP+FP)，FN/(TP+FN) |
-| 定位精度 <100m | 带 GPS 的无人机-卫星配对数据集 | haversine 误差的中位数、P90、达标比例 |
+| 关键帧自动标注一致性 ≥40% | VisDrone2019-VID val 4 段 + UAVDT 2 段 | VLM 框与标注按 IoU≥0.5 匹配，再比类别语义相似度 |
+| 目标识别准确率 ≥85% / 漏检 ≤5% | VisDrone2019-DET val 100 张 | TP/(TP+FP)，FN/(TP+FN) |
+| 定位精度 <100m | UAV-VisLoc 82 张（无元数据，靠卫星 GeoTIFF 匹配）+ DJI 飞行记录（元数据路径） | haversine 误差的中位数、P90、达标比例 |
 | 检索查全率 ≥80% / 准确率 ≥85% | 50 条标准 query | Precision@K、Recall@K |
-| 问答准确率 ≥80% | 50 个问答对 | Decision `score` 裁判 |
+| 问答准确率 ≥80% | 50 个问答对 | Decision `score` 裁判；坐标类按距离程序判定 |
 
 输出 `test_report.json` 和 HTML 报告，每项标注是否达标。

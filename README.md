@@ -89,6 +89,8 @@ cd multimo-frontend && npm install && npm run dev
 ## 文档
 
 - [架构说明](docs/ARCHITECTURE.md)：组件、处理流程、模型分工、Decision 接口约定、评测方法
+- [测试数据](testdata/README.md)：来源、镜像、许可、下载方式（`scripts/prepare_testdata.sh`）
+- [评测集](testdata/benchmark/README.md)：50 条检索 query、50 个问答对及判定规则
 - `docs/API.md`：接口文档（由 OpenAPI 生成，开发中）
 - `docs/TEST_REPORT.md`：实测结果与指标对照（开发中）
 
@@ -97,7 +99,7 @@ cd multimo-frontend && npm install && npm run dev
 | 阶段 | 内容 | 状态 |
 | :--- | :--- | :--- |
 | P0 | 仓库骨架、submodule、compose、环境变量模板 | 完成 |
-| P1 | 测试数据下载与校验、评测集 | 未开始 |
+| P1 | 测试数据下载与校验、评测集 | 完成 |
 | P2 | 后端基础：数据库、AI 网关、goroutine 池、文件解析 | 未开始 |
 | P3 | 关键帧、目标识别、空间对齐 | 未开始 |
 | P4 | 混合检索、RAG 问答 | 未开始 |

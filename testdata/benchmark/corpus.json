@@ -1,0 +1,1367 @@
+{
+ "note": "评测时接入的全部素材。collection 用于检索时限定范围；visloc 只带拍摄时间，不带坐标（坐标是定位评测的真值，必须由系统自己推算）。",
+ "assets": [
+  {
+   "path": "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4",
+   "type": "video",
+   "collection": "visdrone_vid"
+  },
+  {
+   "path": "video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
+   "type": "video",
+   "collection": "visdrone_vid"
+  },
+  {
+   "path": "video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
+   "type": "video",
+   "collection": "visdrone_vid"
+  },
+  {
+   "path": "video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
+   "type": "video",
+   "collection": "visdrone_vid"
+  },
+  {
+   "path": "video/uavdt/mp4/M0202.mp4",
+   "type": "video",
+   "collection": "uavdt"
+  },
+  {
+   "path": "video/uavdt/mp4/M1004.mp4",
+   "type": "video",
+   "collection": "uavdt"
+  },
+  {
+   "path": "video/dji/palos_verdes/drone_palos_verdes_20250217174636.mp4",
+   "type": "video",
+   "collection": "dji",
+   "sidecar": "video/dji/palos_verdes/flight_record.csv"
+  },
+  {
+   "path": "video/formats/uav0000339_00001_v.wmv",
+   "type": "video",
+   "collection": "formats"
+  },
+  {
+   "path": "video/formats/uav0000339_00001_v.flv",
+   "type": "video",
+   "collection": "formats"
+  },
+  {
+   "path": "video/formats/M1004.wmv",
+   "type": "video",
+   "collection": "formats"
+  },
+  {
+   "path": "video/formats/M1004.flv",
+   "type": "video",
+   "collection": "formats"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000001_02999_d_0000005.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000001_05499_d_0000010.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000021_00500_d_0000002.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000022_01251_d_0000007.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000024_00000_d_0000012.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000026_00500_d_0000025.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000026_03000_d_0000030.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000055_00000_d_0000109.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000069_01109_d_0000004.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000076_02142_d_0000009.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000103_02544_d_0000029.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000103_04513_d_0000034.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000116_00351_d_0000083.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000117_01326_d_0000088.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000153_00001_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000153_01801_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000154_01601_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000155_01201_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000162_00801_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000166_00558_d_0000118.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000193_02029_d_0000114.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000194_00000_d_0000119.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000194_00998_d_0000124.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000213_02965_d_0000241.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000213_05340_d_0000246.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000215_01395_d_0000259.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000215_03226_d_0000264.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000242_00001_d_0000001.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000242_01139_d_0000006.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000242_03199_d_0000011.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000242_05570_d_0000016.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000244_01000_d_0000003.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000244_03500_d_0000008.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000244_05900_d_0000013.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000249_01100_d_0000004.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000249_02900_d_0000009.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000256_02173_d_0000030.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_00001_d_0000374.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_01201_d_0000379.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_03001_d_0000387.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_05201_d_0000398.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_06201_d_0000403.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000271_07201_d_0000408.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000276_00601_d_0000510.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000276_02001_d_0000517.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000276_03001_d_0000522.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000276_04001_d_0000527.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000276_05001_d_0000532.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000277_00001_d_0000539.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000277_01801_d_0000548.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000277_03201_d_0000554.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000277_04401_d_0000560.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000280_00401_d_0000614.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000280_01401_d_0000619.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000280_02401_d_0000624.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000280_03401_d_0000629.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000287_00001_d_0000759.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000287_01001_d_0000764.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000287_02001_d_0000769.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000287_03001_d_0000774.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_00001_d_0000811.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_01001_d_0000816.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_02201_d_0000822.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_03401_d_0000828.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_04401_d_0000833.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_05401_d_0000838.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000289_06401_d_0000843.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000290_04001_d_0000867.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000291_01001_d_0000873.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000291_02001_d_0000878.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000291_05001_d_0000892.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000295_00600_d_0000024.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000295_01600_d_0000029.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000301_00201_d_0000157.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000312_00001_d_0000414.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000312_02201_d_0000425.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000313_07001_d_0000471.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000316_00601_d_0000522.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000316_01601_d_0000527.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000327_00001_d_0000711.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000327_01001_d_0000716.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000327_02801_d_0000725.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000327_03801_d_0000730.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000330_00401_d_0000802.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000330_01401_d_0000807.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000330_02801_d_0000814.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000330_04401_d_0000822.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000333_02157_d_0000012.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000333_03137_d_0000017.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000335_00197_d_0000044.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000335_01765_d_0000052.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000335_03137_d_0000059.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000335_04313_d_0000065.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000335_06861_d_0000078.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000346_02549_d_0000359.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "image/visdrone_det_val/images/0000356_02157_d_0000640.jpg",
+   "type": "image",
+   "collection": "visdrone_det"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P10105.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P10956.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P2956.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P3044.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P3182.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P3185.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P3466.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P3575.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P4138.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P4265.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P4947.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P6089.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P6347.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P6519.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P7485.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P7799.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P7800.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P8392.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P8877.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/dota_v2_val/images/P9444.png",
+   "type": "remote_sensing",
+   "collection": "dota"
+  },
+  {
+   "path": "remote_sensing/geotiff/cea.tif",
+   "type": "remote_sensing",
+   "collection": "geotiff"
+  },
+  {
+   "path": "geo/uav_visloc/01/satellite01.tif",
+   "type": "remote_sensing",
+   "collection": "basemap"
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0001.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:44:21"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0011.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:44:55"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0021.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:45:30"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0031.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:46:03"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0041.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:46:37"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0051.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:47:11"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0061.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:47:44"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0071.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:48:18"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0081.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:49:37"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0091.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:50:27"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0101.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:51:18"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0111.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:52:09"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0121.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:52:59"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0131.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:53:51"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0141.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:54:44"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0151.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:55:34"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0161.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:56:26"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0171.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:57:44"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0181.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:58:19"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0191.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:58:54"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0201.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T12:59:29"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0211.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:00:04"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0221.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:00:40"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0231.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:01:15"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0241.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:02:35"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0251.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:03:26"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0261.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:04:16"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0271.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:05:08"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0281.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:05:59"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0291.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:06:48"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0301.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:07:39"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0311.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:08:28"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0321.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:09:17"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0331.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:10:41"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0341.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:11:18"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0351.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:11:52"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0361.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:12:26"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0371.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:13:01"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0381.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:13:35"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0391.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:14:10"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0401.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:14:45"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0411.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:16:16"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0421.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:17:07"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0431.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:17:59"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0441.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:18:51"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0451.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:19:42"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0461.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:20:34"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0471.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:21:24"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0481.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:22:14"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0491.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:23:39"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0501.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:24:14"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0511.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:24:48"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0521.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:25:22"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0531.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:25:54"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0541.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:26:28"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0551.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:27:01"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0561.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:27:33"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0571.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:29:01"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0581.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:29:55"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0591.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:30:50"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0601.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:31:45"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0611.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:32:42"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0621.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:33:37"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0631.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:34:32"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0641.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:35:27"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0651.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:37:10"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0661.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:37:41"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0671.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:38:14"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0681.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:38:47"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0691.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:39:19"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0701.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:39:53"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0711.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:40:26"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0721.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:41:00"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0731.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:41:35"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0741.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:43:11"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0751.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:44:05"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0761.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:45:01"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0771.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:45:56"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0781.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:46:55"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0791.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:47:52"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0801.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:48:51"
+   }
+  },
+  {
+   "path": "geo/uav_visloc/01/drone/01_0811.JPG",
+   "type": "image",
+   "collection": "visloc",
+   "metadata": {
+    "time": "2018-09-17T13:49:52"
+   }
+  },
+  {
+   "path": "docs/faa/CFR-2024-title14-part107.pdf",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/faa/remote_pilot_study_guide.pdf",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/faa/AC_107-2A.pdf",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/faa/Part_107_Summary.pdf",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/cn/uav_flight_regulation_2023.doc",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/uk/pdra01_operations_manual_template.docx",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/geo_text/ne_10m_airports.geojson",
+   "type": "document",
+   "collection": "docs"
+  },
+  {
+   "path": "docs/geo_text/ne_10m_populated_places_simple.geojson",
+   "type": "document",
+   "collection": "docs"
+  }
+ ]
+}
