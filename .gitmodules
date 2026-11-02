@@ -1,0 +1,6 @@
+[submodule "multimo-backend"]
+	path = multimo-backend
+	url = https://github.com/MeVeryHandsome/multimo-backend.git
+[submodule "multimo-frontend"]
+	path = multimo-frontend
+	url = https://github.com/MeVeryHandsome/multimo-frontend.git

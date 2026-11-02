@@ -1,0 +1,64 @@
+name: multimo
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-multimo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-multimo}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/postgres/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build:
+      context: ./multimo-backend
+      dockerfile: manifest/docker/Dockerfile
+      args:
+        GOPROXY: ${GOPROXY:-https://proxy.golang.org,direct}
+    image: multimo-backend:local
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Container-internal values override the local-dev ones in .env
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      HTTP_ADDR: ":8000"
+      DATA_DIR: /data
+      TESTDATA_DIR: /testdata
+    volumes:
+      - appdata:/data
+      - ./testdata:/testdata:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    deploy:
+      resources:
+        limits:
+          memory: ${BACKEND_MEM_LIMIT:-4g}
+
+  frontend:
+    build:
+      context: ./multimo-frontend
+      args:
+        NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
+    image: multimo-frontend:local
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+
+volumes:
+  pgdata:
+  appdata:

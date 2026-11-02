@@ -1,0 +1,22 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data
+/data/
+
+# Test data: only the manifest, benchmark sets and READMEs are versioned
+/testdata/*
+!/testdata/README.md
+!/testdata/manifest.tsv
+!/testdata/benchmark/
+
+# Generated reports (docs/TEST_REPORT.md is versioned)
+/reports/
+test_report.json
+test_report.html
+
+.DS_Store
+.idea/
+.vscode/
