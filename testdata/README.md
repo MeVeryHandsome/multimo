@@ -7,7 +7,7 @@ scripts/prepare_testdata.sh                 # mini：评测用子集，约 1.6 G
 ```
 
 ```bash
-scripts/prepare_testdata.sh --profile full  # 完整数据集，约 17 GB
+scripts/prepare_testdata.sh --profile full  # 完整数据集，下载约 15 GB
 ```
 
 ```bash

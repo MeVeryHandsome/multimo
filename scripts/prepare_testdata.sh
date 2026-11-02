@@ -2,7 +2,7 @@
 # Download, verify and prepare Multimo test data into testdata/.
 #
 #   scripts/prepare_testdata.sh                 # mini profile (~1.6 GB)
-#   scripts/prepare_testdata.sh --profile full  # complete datasets (~17 GB)
+#   scripts/prepare_testdata.sh --profile full  # complete datasets (~15 GB download)
 #   scripts/prepare_testdata.sh --verify        # only re-check MD5 of what is on disk
 #
 # Every file comes from testdata/manifest.tsv. Each row lists one or more
