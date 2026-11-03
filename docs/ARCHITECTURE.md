@@ -72,11 +72,13 @@
 | `qwen3.8-max` | OpenAI 兼容 `chat/completions`，支持图像输入 | 关键帧描述、目标检测、地标识别、答案生成 |
 | `text-embedding-v4` | OpenAI 兼容 `embeddings`，1024 维 | 关键帧描述与文档片段的向量 |
 | `tongyi-embedding-vision-plus-2026-03-06` | DashScope 原生 `multimodal-embedding`，1152 维，每批 4 张 | 关键帧图像向量、底图切块、视觉定位、以文搜图 |
-| `startlux-decision-27b-autothink` | 专有 `/v1/decisions` | 意图分类、证据相关性打分、问答裁判 |
+| `vllm-sr/d3-ultra` | `POST https://app.vllm-sr.ai/v1/systemone`，与下述 decisions 格式相同 | 意图分类、证据相关性打分、问答裁判 |
 
 Decision 模型只做判断和打分，不生成文本；该模型的 `chat/completions` 通道在网关上不可用（返回 `model_not_found`）。
 
 ### Decision 接口约定（2026-11-02 实测）
+
+> 2026-11-03：原服务商（bamboonode `startlux-decision-27b-autothink`）自 14:16 起持续返回 HTTP 500，改用 `vllm-sr/d3-ultra`（`/v1/systemone`）。请求和返回格式与下面一致，实测 choice/score 中文题判断正确，单次约 0.5 秒。
 
 ```http
 POST {DECISION_BASE_URL}/decisions
