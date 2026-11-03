@@ -55,4 +55,4 @@ python3 -I scripts/lib/build_benchmark.py
 
 ## 定位评测的注意事项
 
-`corpus.json` 中 VisLoc 照片只附带拍摄时间，不附带坐标。坐标是定位评测的真值，系统必须通过影像匹配自己推算。DJI 视频附带飞行记录，测的是元数据定位路径。
+`corpus.json` 中 VisLoc 照片只附带拍摄时间和参考底图所在的集合（`geo_reference: basemap`，相当于任务区域已知），不附带坐标。坐标是定位评测的真值，系统必须通过影像匹配自己推算。DJI 视频附带飞行记录，测的是元数据定位路径。

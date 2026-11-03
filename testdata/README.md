@@ -40,7 +40,7 @@ scripts/prepare_testdata.sh --verify        # 只校验已下载的文件
 | `docs/faa/` | 14 CFR Part 107 法规原文、AC 107-2A、Part 107 摘要、远程驾驶员学习指南 | faa.gov、govinfo.gov | 美国政府公有领域 |
 | `docs/cn/` | 《无人驾驶航空器飞行管理暂行条例》（`.doc`） | pds.gov.cn | 法规文本 |
 | `docs/uk/` | 英国 CAA PDRA01 运行手册模板（`.docx`） | caa.co.uk | 英国 CAA 公开模板 |
-| `docs/geo_text/` | Natural Earth 人口聚居点、机场（GeoJSON，固定 v5.1.2） | GitHub、jsDelivr | 公有领域 |
+| `docs/geo_text/` | Natural Earth 人口聚居点（含中文名）、机场（GeoJSON，固定 v5.1.2） | GitHub、jsDelivr | 公有领域 |
 | `benchmark/` | 评测集，见 [benchmark/README.md](benchmark/README.md) | 由标注生成 | — |
 
 mini 档覆盖的文件格式：MP4、WMV、FLV、PNG、JPEG、TIF、DOC、DOCX、PDF。

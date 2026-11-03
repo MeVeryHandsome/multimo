@@ -1,5 +1,5 @@
 {
- "note": "评测时接入的全部素材。collection 用于检索时限定范围；visloc 只带拍摄时间，不带坐标（坐标是定位评测的真值，必须由系统自己推算）。",
+ "note": "评测时接入的全部素材。collection 用于检索时限定范围；visloc 只带拍摄时间和参考底图所在集合（任务区域已知），不带坐标：坐标是定位评测的真值，必须由系统自己推算。",
  "assets": [
   {
    "path": "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4",
@@ -672,7 +672,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:44:21"
+    "time": "2018-09-17T12:44:21",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -680,7 +681,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:44:55"
+    "time": "2018-09-17T12:44:55",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -688,7 +690,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:45:30"
+    "time": "2018-09-17T12:45:30",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -696,7 +699,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:46:03"
+    "time": "2018-09-17T12:46:03",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -704,7 +708,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:46:37"
+    "time": "2018-09-17T12:46:37",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -712,7 +717,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:47:11"
+    "time": "2018-09-17T12:47:11",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -720,7 +726,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:47:44"
+    "time": "2018-09-17T12:47:44",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -728,7 +735,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:48:18"
+    "time": "2018-09-17T12:48:18",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -736,7 +744,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:49:37"
+    "time": "2018-09-17T12:49:37",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -744,7 +753,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:50:27"
+    "time": "2018-09-17T12:50:27",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -752,7 +762,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:51:18"
+    "time": "2018-09-17T12:51:18",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -760,7 +771,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:52:09"
+    "time": "2018-09-17T12:52:09",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -768,7 +780,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:52:59"
+    "time": "2018-09-17T12:52:59",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -776,7 +789,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:53:51"
+    "time": "2018-09-17T12:53:51",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -784,7 +798,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:54:44"
+    "time": "2018-09-17T12:54:44",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -792,7 +807,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:55:34"
+    "time": "2018-09-17T12:55:34",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -800,7 +816,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:56:26"
+    "time": "2018-09-17T12:56:26",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -808,7 +825,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:57:44"
+    "time": "2018-09-17T12:57:44",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -816,7 +834,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:58:19"
+    "time": "2018-09-17T12:58:19",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -824,7 +843,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:58:54"
+    "time": "2018-09-17T12:58:54",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -832,7 +852,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T12:59:29"
+    "time": "2018-09-17T12:59:29",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -840,7 +861,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:00:04"
+    "time": "2018-09-17T13:00:04",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -848,7 +870,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:00:40"
+    "time": "2018-09-17T13:00:40",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -856,7 +879,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:01:15"
+    "time": "2018-09-17T13:01:15",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -864,7 +888,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:02:35"
+    "time": "2018-09-17T13:02:35",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -872,7 +897,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:03:26"
+    "time": "2018-09-17T13:03:26",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -880,7 +906,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:04:16"
+    "time": "2018-09-17T13:04:16",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -888,7 +915,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:05:08"
+    "time": "2018-09-17T13:05:08",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -896,7 +924,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:05:59"
+    "time": "2018-09-17T13:05:59",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -904,7 +933,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:06:48"
+    "time": "2018-09-17T13:06:48",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -912,7 +942,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:07:39"
+    "time": "2018-09-17T13:07:39",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -920,7 +951,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:08:28"
+    "time": "2018-09-17T13:08:28",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -928,7 +960,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:09:17"
+    "time": "2018-09-17T13:09:17",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -936,7 +969,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:10:41"
+    "time": "2018-09-17T13:10:41",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -944,7 +978,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:11:18"
+    "time": "2018-09-17T13:11:18",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -952,7 +987,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:11:52"
+    "time": "2018-09-17T13:11:52",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -960,7 +996,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:12:26"
+    "time": "2018-09-17T13:12:26",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -968,7 +1005,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:13:01"
+    "time": "2018-09-17T13:13:01",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -976,7 +1014,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:13:35"
+    "time": "2018-09-17T13:13:35",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -984,7 +1023,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:14:10"
+    "time": "2018-09-17T13:14:10",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -992,7 +1032,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:14:45"
+    "time": "2018-09-17T13:14:45",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1000,7 +1041,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:16:16"
+    "time": "2018-09-17T13:16:16",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1008,7 +1050,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:17:07"
+    "time": "2018-09-17T13:17:07",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1016,7 +1059,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:17:59"
+    "time": "2018-09-17T13:17:59",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1024,7 +1068,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:18:51"
+    "time": "2018-09-17T13:18:51",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1032,7 +1077,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:19:42"
+    "time": "2018-09-17T13:19:42",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1040,7 +1086,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:20:34"
+    "time": "2018-09-17T13:20:34",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1048,7 +1095,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:21:24"
+    "time": "2018-09-17T13:21:24",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1056,7 +1104,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:22:14"
+    "time": "2018-09-17T13:22:14",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1064,7 +1113,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:23:39"
+    "time": "2018-09-17T13:23:39",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1072,7 +1122,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:24:14"
+    "time": "2018-09-17T13:24:14",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1080,7 +1131,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:24:48"
+    "time": "2018-09-17T13:24:48",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1088,7 +1140,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:25:22"
+    "time": "2018-09-17T13:25:22",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1096,7 +1149,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:25:54"
+    "time": "2018-09-17T13:25:54",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1104,7 +1158,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:26:28"
+    "time": "2018-09-17T13:26:28",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1112,7 +1167,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:27:01"
+    "time": "2018-09-17T13:27:01",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1120,7 +1176,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:27:33"
+    "time": "2018-09-17T13:27:33",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1128,7 +1185,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:29:01"
+    "time": "2018-09-17T13:29:01",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1136,7 +1194,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:29:55"
+    "time": "2018-09-17T13:29:55",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1144,7 +1203,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:30:50"
+    "time": "2018-09-17T13:30:50",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1152,7 +1212,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:31:45"
+    "time": "2018-09-17T13:31:45",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1160,7 +1221,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:32:42"
+    "time": "2018-09-17T13:32:42",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1168,7 +1230,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:33:37"
+    "time": "2018-09-17T13:33:37",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1176,7 +1239,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:34:32"
+    "time": "2018-09-17T13:34:32",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1184,7 +1248,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:35:27"
+    "time": "2018-09-17T13:35:27",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1192,7 +1257,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:37:10"
+    "time": "2018-09-17T13:37:10",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1200,7 +1266,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:37:41"
+    "time": "2018-09-17T13:37:41",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1208,7 +1275,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:38:14"
+    "time": "2018-09-17T13:38:14",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1216,7 +1284,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:38:47"
+    "time": "2018-09-17T13:38:47",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1224,7 +1293,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:39:19"
+    "time": "2018-09-17T13:39:19",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1232,7 +1302,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:39:53"
+    "time": "2018-09-17T13:39:53",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1240,7 +1311,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:40:26"
+    "time": "2018-09-17T13:40:26",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1248,7 +1320,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:41:00"
+    "time": "2018-09-17T13:41:00",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1256,7 +1329,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:41:35"
+    "time": "2018-09-17T13:41:35",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1264,7 +1338,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:43:11"
+    "time": "2018-09-17T13:43:11",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1272,7 +1347,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:44:05"
+    "time": "2018-09-17T13:44:05",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1280,7 +1356,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:45:01"
+    "time": "2018-09-17T13:45:01",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1288,7 +1365,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:45:56"
+    "time": "2018-09-17T13:45:56",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1296,7 +1374,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:46:55"
+    "time": "2018-09-17T13:46:55",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1304,7 +1383,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:47:52"
+    "time": "2018-09-17T13:47:52",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1312,7 +1392,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:48:51"
+    "time": "2018-09-17T13:48:51",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1320,7 +1401,8 @@
    "type": "image",
    "collection": "visloc",
    "metadata": {
-    "time": "2018-09-17T13:49:52"
+    "time": "2018-09-17T13:49:52",
+    "geo_reference": "basemap"
    }
   },
   {
@@ -1359,7 +1441,7 @@
    "collection": "docs"
   },
   {
-   "path": "docs/geo_text/ne_10m_populated_places_simple.geojson",
+   "path": "docs/geo_text/ne_10m_populated_places.geojson",
    "type": "document",
    "collection": "docs"
   }

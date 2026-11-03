@@ -234,7 +234,7 @@ DOCS = {
     "docs/cn/uav_flight_regulation_2023.doc": "doc",
     "docs/uk/pdra01_operations_manual_template.docx": "docx",
     "docs/geo_text/ne_10m_airports.geojson": "text",
-    "docs/geo_text/ne_10m_populated_places_simple.geojson": "text",
+    "docs/geo_text/ne_10m_populated_places.geojson": "text",
 }
 
 
@@ -273,8 +273,8 @@ def haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
 
 def build_corpus(vids, dets, dota, geo, dji) -> dict:
     return {
-        "note": "评测时接入的全部素材。collection 用于检索时限定范围；visloc 只带拍摄时间，不带坐标"
-                "（坐标是定位评测的真值，必须由系统自己推算）。",
+        "note": "评测时接入的全部素材。collection 用于检索时限定范围；visloc 只带拍摄时间和参考底图所在集合"
+                "（任务区域已知），不带坐标：坐标是定位评测的真值，必须由系统自己推算。",
         "assets": (
             [{"path": v["video"], "type": "video", "collection": v["id"].split(":")[0]} for v in vids]
             + [{"path": dji["video"], "type": "video", "collection": "dji", "sidecar": dji["telemetry"]}]
@@ -284,8 +284,8 @@ def build_corpus(vids, dets, dota, geo, dji) -> dict:
             + [{"path": d["image"], "type": "remote_sensing", "collection": "dota"} for d in dota]
             + [{"path": "remote_sensing/geotiff/cea.tif", "type": "remote_sensing", "collection": "geotiff"},
                {"path": "geo/uav_visloc/01/satellite01.tif", "type": "remote_sensing", "collection": "basemap"}]
-            + [{"path": g["image"], "type": "image", "collection": "visloc", "metadata": {"time": g["time"]}}
-               for g in geo]
+            + [{"path": g["image"], "type": "image", "collection": "visloc",
+                "metadata": {"time": g["time"], "geo_reference": "basemap"}} for g in geo]
             + [{"path": p, "type": "document", "collection": "docs"} for p in DOCS]
         ),
     }

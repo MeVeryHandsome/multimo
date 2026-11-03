@@ -47,4 +47,4 @@
 {"id": "q47", "type": "document", "query": "无人机未实名登记的处罚", "collections": ["docs"], "relevant": ["docs/cn/uav_flight_regulation_2023.doc"], "rule": "文档全文包含：未经实名登记"}
 {"id": "q48", "type": "document", "query": "英国 PDRA01 运行手册模板", "collections": ["docs"], "relevant": ["docs/uk/pdra01_operations_manual_template.docx"], "rule": "文档全文包含：pdra01"}
 {"id": "q49", "type": "document", "query": "全球机场的位置与 IATA 代码数据", "collections": ["docs"], "relevant": ["docs/geo_text/ne_10m_airports.geojson"], "rule": "文档全文包含：iata_code"}
-{"id": "q50", "type": "document", "query": "世界城市与人口聚居点的地理坐标数据", "collections": ["docs"], "relevant": ["docs/geo_text/ne_10m_populated_places_simple.geojson"], "rule": "文档全文包含：pop_max"}
+{"id": "q50", "type": "document", "query": "世界城市与人口聚居点的地理坐标数据", "collections": ["docs"], "relevant": ["docs/geo_text/ne_10m_populated_places.geojson"], "rule": "文档全文包含：pop_max"}
