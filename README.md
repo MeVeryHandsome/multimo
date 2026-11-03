@@ -100,7 +100,7 @@ cd multimo-frontend && npm install && npm run dev
 | :--- | :--- | :--- |
 | P0 | 仓库骨架、submodule、compose、环境变量模板 | 完成 |
 | P1 | 测试数据下载与校验、评测集 | 完成 |
-| P2 | 后端基础：数据库、AI 网关、goroutine 池、文件解析 | 未开始 |
+| P2 | 后端基础：数据库、AI 网关、goroutine 池、文件解析 | 完成 |
 | P3 | 关键帧、目标识别、空间对齐 | 未开始 |
 | P4 | 混合检索、RAG 问答 | 未开始 |
 | P5 | 自动化评测与报告 | 未开始 |

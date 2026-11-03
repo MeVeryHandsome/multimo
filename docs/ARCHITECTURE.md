@@ -67,15 +67,21 @@ Authorization: Bearer <DECISION_API_KEY>
 
 ## AI 网关（`internal/pkg/llm`）
 
-- 统一封装三类调用：chat（含图像）、embedding、decision。
+- 统一封装三类调用：chat（含图像，支持 JSON 模式）、embedding、decision。
 - 每个端点有独立的并发上限（`*_MAX_CONCURRENCY`）。
-- 失败重试 `AI_MAX_RETRIES` 次，指数退避加抖动；4xx（除 429）不重试。
-- 全部失败后按 `AI_FALLBACK_ENABLED` 走本地兜底：
-  - 关键帧描述：ffprobe 元数据 + 颜色和亮度统计生成的模板描述
-  - 目标检测：返回空结果并把这一帧标记为待重跑
-  - embedding：本地特征哈希向量（检索质量会明显下降）
-  - decision：规则和关键词匹配
-- 每次调用写一条 `ai_call_log`：端点、模型、token 用量、延迟、重试次数、是否兜底、输入输出摘要（截断到 `AI_LOG_PAYLOAD_CHARS`）。
+- 每次调用最多尝试 `1 + AI_MAX_RETRIES` 次：网络错误、超时、429、5xx 按指数退避加抖动重试，429 优先遵循 `Retry-After`；其他 4xx 不重试；JSON 模式下回复里没有 JSON 对象也会重试。
+- 全部失败后按 `AI_FALLBACK_ENABLED` 走本地兜底，调用日志里状态记为 `fallback`：
+  - embedding：本地特征哈希向量，模型名 `local-hash-v1`。一批向量不会混用两种来源，入库时记录模型名，只和同一模型的向量比较。
+  - decision：按关键词重合度判断。
+  - chat：由调用方提供兜底函数。P3 计划给关键帧描述配"元数据 + 颜色亮度统计"的模板描述；目标检测兜底返回空结果，并把该帧标记为待重跑。
+- 每次调用写一条 `ai_call_log`：端点、模型、用途、token 用量、延迟、尝试次数、状态、输入输出摘要（截断到 `AI_LOG_PAYLOAD_CHARS`）。图片只记尺寸和大小，API key 不进日志。`GET /api/v1/system/ai-calls` 汇总查看。
+- 实测（2026-11-03）：`qwen3.8-max` 支持图像输入和 JSON 模式，关闭思考（`enable_thinking=false`）后单张图描述约 5～8 秒；`text-embedding-v4` 约 0.6 秒；Decision 约 0.5 秒。
+
+## 数据模型要点
+
+- 图片和遥感影像在 `keyframes` 表里各占一行（`idx = 0`），和视频关键帧放在一起，检索、检测、问答只面对一种画面单元。
+- 大幅 GeoTIFF（如 UAV-VisLoc 卫星图，9774×26762，805 MB）用自带的 `internal/pkg/geotiff` 读取：只解析文件头即可得到经纬度范围，缩略图只读采样到的像素行（约 0.02 秒）。ffmpeg 会把这种分块 TIFF 渲染成全黑，而且要读完整个文件。
+- 任务队列存放在 `tasks` 表，用 `FOR UPDATE SKIP LOCKED` 领取，重启后自动恢复；临时错误按退避重试，永久错误直接标记失败。
 
 ## 中文关键词检索
 
