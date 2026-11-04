@@ -6,6 +6,8 @@ services:
     build:
       args:
         TORCH_INDEX: https://download.pytorch.org/whl/cu126
+        TORCH_VERSION: "2.7.1"
+        TORCHVISION_VERSION: "0.22.1"
     environment:
       DETECTOR_DEVICE: cuda:0
     deploy:

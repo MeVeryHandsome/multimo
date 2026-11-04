@@ -25,18 +25,16 @@
 ## 复现
 
 ```bash
-scripts/prepare_testdata.sh
+scripts/demo.sh
 ```
+
+脚本依次下载并校验测试数据、`docker compose up`、登记 `testdata/benchmark/corpus.json` 中的 223 个文件并等待处理完成（首次处理耗时较长，主要是约 300 个关键帧的 VLM 分析和 2361 个底图切片的向量化），然后运行评测并把报告保存到 `demo-output/`。服务已在运行时：
 
 ```bash
-docker compose up -d --build
+docker compose exec backend multimo testsuite
 ```
 
-```bash
-docker compose exec backend multimo testsuite -register
-```
-
-`-register` 先登记 `testdata/benchmark/corpus.json` 中的 223 个文件并等待处理完成（首次处理耗时较长，主要是约 300 个关键帧的 VLM 分析和 2361 个底图切片的向量化），然后运行评测。语料已处理过时去掉 `-register`，或调用 `POST /api/v1/testsuite/run`。
+或调用 `POST /api/v1/testsuite/run`，在前端“评测”页查看进度和结果。
 
 问答结果每次运行会有小幅波动，因为 VLM 回答和 Decision 打分不是完全确定的：P5 期间 4 次完整运行分别为 40、41、41、42 题正确（期间有代码改动，见调优记录），其中 qa50 在第一次运行中判错，单独重问时回答正确。检索结果在代码不变时是稳定的。
 

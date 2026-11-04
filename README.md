@@ -23,7 +23,7 @@ multimo/
 ├── .env.example            环境变量模板
 ├── deploy/postgres/        数据库初始化（扩展）
 ├── docs/                   架构、API、测试报告
-├── scripts/                测试数据准备、一键演示
+├── scripts/                测试数据准备、一键演示（demo.sh）、接口文档生成
 └── testdata/               测试数据（大文件不入库，只提交清单和评测集）
 ```
 
@@ -37,7 +37,15 @@ git clone --recurse-submodules https://github.com/MeVeryHandsome/multimo.git
 cd multimo && cp .env.example .env
 ```
 
-编辑 `.env`，至少填好 `POSTGRES_PASSWORD`、`VLM_API_KEY`、`DECISION_API_KEY`，然后：
+编辑 `.env`，至少填好 `POSTGRES_PASSWORD`、`VLM_API_KEY`、`DECISION_API_KEY`。
+
+**一键演示**：下载并校验测试数据、启动全部服务、登记并处理评测语料、运行示例检索和问答，最后跑完整评测并把报告保存到 `demo-output/`：
+
+```bash
+scripts/demo.sh
+```
+
+只启动服务：
 
 ```bash
 docker compose up -d --build
@@ -58,7 +66,7 @@ docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
 | http://localhost:8000/api.json | OpenAPI 文档 |
 | http://localhost:8000/api/v1/system/health | 健康检查 |
 
-国内网络构建镜像时，可以在 `.env` 里把 `GOPROXY` 改成 `https://goproxy.cn,direct`，把 `NPM_REGISTRY` 改成 `https://registry.npmmirror.com`。
+国内网络构建镜像时，可以在 `.env` 里把 `GOPROXY` 改成 `https://goproxy.cn,direct`，把 `NPM_REGISTRY` 改成 `https://registry.npmmirror.com`，把 `PIP_INDEX_URL` 改成 `https://pypi.tuna.tsinghua.edu.cn/simple`。
 
 ## 评测
 
@@ -124,7 +132,7 @@ cd multimo-frontend && npm install && npm run dev
 - [目标检测服务](detector/README.md)：模型选择、阈值标定、接口和部署
 - [测试数据](testdata/README.md)：来源、镜像、许可、下载方式（`scripts/prepare_testdata.sh`）
 - [评测集](testdata/benchmark/README.md)：50 条检索 query、50 个问答对及判定规则
-- `docs/API.md`：接口文档（由 OpenAPI 生成，开发中）
+- [接口文档](docs/API.md)：全部接口的参数、返回字段和示例（`scripts/gen_api_docs.py` 由 OpenAPI 生成）
 - [测试报告](docs/TEST_REPORT.md)：实测结果、指标对照和调优记录
 
 ## 进度
@@ -138,4 +146,4 @@ cd multimo-frontend && npm install && npm run dev
 | P4 | 混合检索、RAG 问答 | 完成 |
 | P5 | 自动化评测与报告 | 完成 |
 | P6 | 前端界面、目标检测服务 | 完成 |
-| P7 | 联调、一键演示、API 文档、测试报告 | 未开始 |
+| P7 | 一键演示、API 文档、测试报告 | 完成 |
