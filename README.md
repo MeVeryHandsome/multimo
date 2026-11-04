@@ -50,6 +50,28 @@ docker compose up -d --build
 
 国内网络构建镜像时，可以在 `.env` 里把 `GOPROXY` 改成 `https://goproxy.cn,direct`，把 `NPM_REGISTRY` 改成 `https://registry.npmmirror.com`。
 
+## 评测
+
+先下载测试数据（自动校验 MD5，可重复执行）：
+
+```bash
+scripts/prepare_testdata.sh
+```
+
+登记评测语料、处理完队列后运行全部 6 项评测（报告写到数据卷的 `reports/<时间>/`）：
+
+```bash
+docker compose exec backend multimo testsuite -register
+```
+
+也可以在服务运行时通过接口触发，进度和报告见 `/api/v1/testsuite/status`、`/api/v1/testsuite/reports/latest/html`：
+
+```bash
+curl -X POST localhost:8000/api/v1/testsuite/run -H 'Content-Type: application/json' -d '{}'
+```
+
+指标定义见 [架构说明](docs/ARCHITECTURE.md#评测internalservicetestsuite)，实测结果见 [测试报告](docs/TEST_REPORT.md)。
+
 ## 子模块工作流
 
 已经 clone 但没带 `--recurse-submodules`：
@@ -92,7 +114,7 @@ cd multimo-frontend && npm install && npm run dev
 - [测试数据](testdata/README.md)：来源、镜像、许可、下载方式（`scripts/prepare_testdata.sh`）
 - [评测集](testdata/benchmark/README.md)：50 条检索 query、50 个问答对及判定规则
 - `docs/API.md`：接口文档（由 OpenAPI 生成，开发中）
-- `docs/TEST_REPORT.md`：实测结果与指标对照（开发中）
+- [测试报告](docs/TEST_REPORT.md)：实测结果、指标对照和调优记录
 
 ## 进度
 
@@ -103,6 +125,6 @@ cd multimo-frontend && npm install && npm run dev
 | P2 | 后端基础：数据库、AI 网关、goroutine 池、文件解析 | 完成 |
 | P3 | 关键帧、目标识别、空间对齐 | 完成 |
 | P4 | 混合检索、RAG 问答 | 完成 |
-| P5 | 自动化评测与报告 | 未开始 |
+| P5 | 自动化评测与报告 | 完成 |
 | P6 | 前端界面 | 未开始 |
 | P7 | 联调、一键演示、API 文档、测试报告 | 未开始 |

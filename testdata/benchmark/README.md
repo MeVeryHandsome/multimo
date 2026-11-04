@@ -51,7 +51,9 @@ python3 -I scripts/lib/build_benchmark.py
 | geo | 6 | VisLoc GPS 真值（带 100 m 容差的程序化校验）、DJI 飞行记录 |
 | cross | 4 | 跨来源：飞行记录 + 法规、视频属性 + 法规、两国法规对比 |
 
-带 `check` 字段的问答（坐标类）由程序计算距离判定，其余由 Decision 模型对照参考答案打分。
+带 `check` 字段的问答（坐标类）由程序计算距离判定，其余由 Decision 模型对照参考答案按 0/1/2 打分，期望分 ≥ 1.5 记为正确。
+
+检索按素材聚合后计分：准确率 = 前 10 名中的相关数 ÷ min(10, 相关总数)，查全率 = 前 max(10, 相关总数) 名中的相关数 ÷ 相关总数。评分细则和其余指标的公式见 [架构说明 · 评测](../../docs/ARCHITECTURE.md#评测internalservicetestsuite)，运行方式是 `multimo testsuite`。
 
 ## 定位评测的注意事项
 
