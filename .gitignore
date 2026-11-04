@@ -24,3 +24,6 @@ test_report.html
 # Python
 __pycache__/
 *.pyc
+# The published report of the latest full run is kept in the docs.
+!docs/test-report/test_report.json
+!docs/test-report/test_report.html
