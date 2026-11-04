@@ -1,0 +1,17 @@
+# GPU variant of the detector:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+# Needs the NVIDIA Container Toolkit on the host.
+services:
+  detector:
+    build:
+      args:
+        TORCH_INDEX: https://download.pytorch.org/whl/cu126
+    environment:
+      DETECTOR_DEVICE: cuda:0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

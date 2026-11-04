@@ -13,11 +13,13 @@
 | `multimo-backend/` | [MeVeryHandsome/multimo-backend](https://github.com/MeVeryHandsome/multimo-backend) | GoFrame v2.10.4、PostgreSQL 16 + pgvector、FFmpeg |
 | `multimo-frontend/` | [MeVeryHandsome/multimo-frontend](https://github.com/MeVeryHandsome/multimo-frontend) | React 19、Vite、TypeScript、Tailwind CSS v4 |
 
-主仓库本身放部署文件、环境变量模板、测试数据脚本和文档：
+主仓库本身放部署文件、目标检测服务、环境变量模板、测试数据脚本和文档：
 
 ```
 multimo/
-├── docker-compose.yml      postgres(pgvector) + backend + frontend
+├── docker-compose.yml      postgres(pgvector) + detector + backend + frontend
+├── docker-compose.gpu.yml  检测服务改用 GPU（可选）
+├── detector/               VisDrone 目标检测服务（YOLO，FastAPI）
 ├── .env.example            环境变量模板
 ├── deploy/postgres/        数据库初始化（扩展）
 ├── docs/                   架构、API、测试报告
@@ -40,6 +42,14 @@ cd multimo && cp .env.example .env
 ```bash
 docker compose up -d --build
 ```
+
+检测服务默认用 CPU，首次启动会下载约 110 MB 的模型权重（国内可在 `.env` 中把 `DETECTOR_WEIGHTS_URL` 的 `huggingface.co` 换成 `hf-mirror.com`）。有 NVIDIA GPU 时：
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+```
+
+检测服务部署在另一台 GPU 服务器上时，把 `.env` 里的 `DETECTOR_BASE_URL_DOCKER` 改成它的地址即可。
 
 | 地址 | 内容 |
 | :--- | :--- |
@@ -110,7 +120,8 @@ cd multimo-frontend && npm install && npm run dev
 
 ## 文档
 
-- [架构说明](docs/ARCHITECTURE.md)：组件、处理流程、模型分工、Decision 接口约定、评测方法
+- [架构说明](docs/ARCHITECTURE.md)：组件、处理流程、模型分工、Decision 接口约定、前端、评测方法
+- [目标检测服务](detector/README.md)：模型选择、阈值标定、接口和部署
 - [测试数据](testdata/README.md)：来源、镜像、许可、下载方式（`scripts/prepare_testdata.sh`）
 - [评测集](testdata/benchmark/README.md)：50 条检索 query、50 个问答对及判定规则
 - `docs/API.md`：接口文档（由 OpenAPI 生成，开发中）
@@ -126,5 +137,5 @@ cd multimo-frontend && npm install && npm run dev
 | P3 | 关键帧、目标识别、空间对齐 | 完成 |
 | P4 | 混合检索、RAG 问答 | 完成 |
 | P5 | 自动化评测与报告 | 完成 |
-| P6 | 前端界面 | 未开始 |
+| P6 | 前端界面、目标检测服务 | 完成 |
 | P7 | 联调、一键演示、API 文档、测试报告 | 未开始 |

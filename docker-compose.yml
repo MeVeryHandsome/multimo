@@ -33,18 +33,46 @@ services:
       HTTP_ADDR: ":8000"
       DATA_DIR: /data
       TESTDATA_DIR: /testdata
+      DETECTOR_BASE_URL: ${DETECTOR_BASE_URL_DOCKER:-http://detector:8000}
     volumes:
       - appdata:/data
       - ./testdata:/testdata:ro
     depends_on:
       postgres:
         condition: service_healthy
+      detector:
+        condition: service_healthy
+        required: false
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     deploy:
       resources:
         limits:
           memory: ${BACKEND_MEM_LIMIT:-4g}
+
+  # VisDrone object detector (CPU by default; docker-compose.gpu.yml adds a GPU).
+  # Weights are downloaded into the detector-models volume on first start.
+  detector:
+    build:
+      context: ./detector
+      args:
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+        TORCH_INDEX: ${TORCH_INDEX:-https://download.pytorch.org/whl/cpu}
+    image: multimo-detector:local
+    restart: unless-stopped
+    environment:
+      DETECTOR_WEIGHTS: /models/visdrone.pt
+      DETECTOR_WEIGHTS_URL: ${DETECTOR_WEIGHTS_URL:-https://huggingface.co/dronefreak/visdrone-yolov9e/resolve/main/best.pt}
+      DETECTOR_MODEL_NAME: ${DETECTOR_MODEL:-visdrone-yolov9e}
+      DETECTOR_IMGSZ: ${DETECTOR_IMGSZ:-1024}
+      DETECTOR_CONF: ${DETECTOR_CONF:-0.57}
+      DETECTOR_API_KEY: ${DETECTOR_API_KEY:-}
+    volumes:
+      - detector-models:/models
+    deploy:
+      resources:
+        limits:
+          memory: ${DETECTOR_MEM_LIMIT:-6g}
 
   frontend:
     build:
@@ -62,3 +90,4 @@ services:
 volumes:
   pgdata:
   appdata:
+  detector-models:
