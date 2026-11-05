@@ -1,7 +1,7 @@
 """Weighted box fusion of several detection passes (scales, flips or models).
 
-Shared by the service (app.py) and the evaluation tools, so offline numbers
-and the deployed service fuse boxes the same way.
+Shared by the service (app.py), the rescorer (rescore.py) and the evaluation
+tools, so offline numbers and the deployed service fuse boxes the same way.
 
 Each pass is a list of (label, [x1, y1, x2, y2], score). Within one label,
 boxes are visited from the highest score down; a box joins the first existing
@@ -9,13 +9,14 @@ cluster whose fused box it overlaps with IoU >= iou_thr, otherwise it starts a
 new cluster. A cluster's box is the score-weighted mean of its members, and
 its score is the mean over passes of each pass's best member score (a pass
 that has no member contributes 0), so a box seen by only one of k passes
-scores at most 1/k."""
+scores at most 1/k. With detail=True each result also carries the per-pass
+scores (a length-k array)."""
 import numpy as np
 
 
-def wbf(passes, iou_thr=0.55):
+def wbf(passes, iou_thr=0.55, detail=False):
     k = len(passes)
-    if k == 1:
+    if k == 1 and not detail:
         return [(l, list(b), s) for l, b, s in passes[0]]
     dets = sorted(((l, np.asarray(b, dtype=float), s, m) for m, ds in enumerate(passes) for l, b, s in ds),
                   key=lambda d: -d[2])
@@ -41,5 +42,8 @@ def wbf(passes, iou_thr=0.55):
             scores.append([0.0] * k)
             scores[-1][m] = s
             boxes = np.vstack([boxes, b])
-        out += [(label, box.tolist(), sum(sc) / k) for box, sc in zip(boxes, scores)]
+        if detail:
+            out += [(label, box.tolist(), sum(sc) / k, np.array(sc)) for box, sc in zip(boxes, scores)]
+        else:
+            out += [(label, box.tolist(), sum(sc) / k) for box, sc in zip(boxes, scores)]
     return out

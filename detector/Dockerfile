@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2
 RUN pip install --index-url ${TORCH_INDEX} torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION}
 COPY requirements.txt /app/requirements.txt
 RUN pip install -i ${PIP_INDEX_URL} -r /app/requirements.txt
-COPY app.py fusion.py /app/
+COPY app.py fusion.py rescore.py /app/
 
 WORKDIR /app
 EXPOSE 8000
