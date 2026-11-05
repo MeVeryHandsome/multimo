@@ -1,6 +1,6 @@
 """Train and evaluate the second-stage rescorer (see ../rescore.py).
 
-    TESTDATA_DIR=../../testdata TARGET=0.86 SAVE=rescorer.pkl python rescore.py TAG [TAG ...]
+    TESTDATA_DIR=../../testdata TARGET=0.86 SAVE=rescorer.pkl python train_rescorer.py TAG [TAG ...]
 
 TAGs name cached passes in ./preds (see eval_visdrone.py), in the service's
 pass order: every model at every scale, then the mirrored passes. Protocol,

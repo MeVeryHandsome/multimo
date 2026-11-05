@@ -7,7 +7,7 @@ how many passes saw it, class, size, position, crowding, duplicates and
 competing boxes of other classes (e.g. people vs pedestrian on the same spot).
 
 This module holds the feature definition, shared by the service and the
-training tool (tools/rescore.py), so the deployed features always match the
+training tool (tools/train_rescorer.py), so the deployed features always match the
 ones the model was trained on. A rescorer file is a pickle with keys:
 model (sklearn classifier), passes (int), min_score, threshold, classes,
 groups, sklearn (version it was trained with) and a description."""
