@@ -102,7 +102,7 @@
 | 模型 | 接口 | 用途 |
 | :--- | :--- | :--- |
 | `qwen3.8-max` | OpenAI 兼容 `chat/completions`，支持图像输入 | 关键帧描述、地标识别、答案生成；未配置检测服务时也画目标框 |
-| `visdrone-yolov9e` | 自带检测服务 `POST {DETECTOR_BASE_URL}/v1/detect` | 无人机照片和视频关键帧的目标框（VisDrone 10 类） |
+| `visdrone-yolov9e`（默认，CPU）或 `multimo-visdrone-yolo11x-1280`（1280 输入微调、三尺度融合，GPU 服务器） | 自带检测服务 `POST {DETECTOR_BASE_URL}/v1/detect`（[detector/](../detector/README.md)） | 无人机照片和视频关键帧的目标框（VisDrone 10 类） |
 | `text-embedding-v4` | OpenAI 兼容 `embeddings`，1024 维 | 关键帧描述与文档片段的向量 |
 | `tongyi-embedding-vision-plus-2026-03-06` | DashScope 原生 `multimodal-embedding`，1152 维，每批 4 张 | 关键帧图像向量、底图切块、视觉定位、以文搜图 |
 | `vllm-sr/d3-ultra` | `POST https://app.vllm-sr.ai/v1/systemone`，与下述 decisions 格式相同 | 意图分类、证据相关性打分、问答裁判 |

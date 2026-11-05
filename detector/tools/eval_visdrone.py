@@ -72,7 +72,7 @@ def match(preds, gt, compat):
 
 
 def predict(weights, imgsz, items, extra=None, split="bench"):
-    tag = os.path.basename(os.path.dirname(weights)) + f"_{imgsz}" + (f"_{extra}" if extra else "") + ("" if split == "bench" else "_" + split)
+    tag = (os.environ.get("TAG") or os.path.basename(os.path.dirname(weights))) + f"_{imgsz}" + (f"_{extra}" if extra else "") + ("" if split == "bench" else "_" + split)
     cache = os.path.join(HERE, "preds", tag + ".json")
     if os.path.exists(cache):
         return json.load(open(cache)), tag

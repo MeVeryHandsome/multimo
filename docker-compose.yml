@@ -65,6 +65,7 @@ services:
       DETECTOR_WEIGHTS_URL: ${DETECTOR_WEIGHTS_URL:-https://huggingface.co/dronefreak/visdrone-yolov9e/resolve/main/best.pt}
       DETECTOR_MODEL_NAME: ${DETECTOR_MODEL:-visdrone-yolov9e}
       DETECTOR_IMGSZ: ${DETECTOR_IMGSZ:-1024}
+      DETECTOR_SCALES: ${DETECTOR_SCALES:-}
       DETECTOR_CONF: ${DETECTOR_CONF:-0.57}
       DETECTOR_API_KEY: ${DETECTOR_API_KEY:-}
     volumes:

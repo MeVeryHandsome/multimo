@@ -57,7 +57,7 @@ docker compose up -d --build
 docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
 ```
 
-检测服务部署在另一台 GPU 服务器上时，把 `.env` 里的 `DETECTOR_BASE_URL_DOCKER` 改成它的地址即可。
+检测服务部署在另一台 GPU 服务器上时，把 `.env` 里的 `DETECTOR_BASE_URL_DOCKER` 改成它的地址即可。推荐在 GPU 服务器上运行按 1280 输入微调的模型（三尺度融合，漏检率 22.2%，默认 CPU 模型为 25.7%），部署方法见 [detector/README.md](detector/README.md#在-gpu-服务器上部署)。
 
 | 地址 | 内容 |
 | :--- | :--- |
