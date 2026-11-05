@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-04T20:21:35.93347943Z",
-  "durationSec": 103.9,
-  "version": "p6-dev",
+  "generatedAt": "2026-11-05T19:42:14.311072423Z",
+  "durationSec": 104.5,
+  "version": "v1.0.0",
   "models": {
     "decision": "vllm-sr/d3-ultra",
-    "detector": "visdrone-yolov9e",
+    "detector": "multimo-visdrone-ensemble",
     "embedding": "text-embedding-v4",
     "vision_embedding": "tongyi-embedding-vision-plus-2026-03-06",
     "vlm": "qwen3.8-max"
@@ -30,8 +30,8 @@
     {
       "id": "keyframe_consistency",
       "name": "关键帧自动标注一致性",
-      "value": 0.6607,
-      "display": "66.1%",
+      "value": 0.7592,
+      "display": "75.9%",
       "target": "≥ 40%",
       "pass": true,
       "primary": true,
@@ -40,32 +40,32 @@
     {
       "id": "keyframe_semantic",
       "name": "关键帧类别语义相似度",
-      "value": 0.9551,
-      "display": "0.955",
+      "value": 0.9515,
+      "display": "0.952",
       "target": "—",
       "pass": true,
       "primary": false,
-      "note": "类别集合 Jaccard 0.769"
+      "note": "类别集合 Jaccard 0.771"
     },
     {
       "id": "detection_precision",
       "name": "目标识别准确率",
-      "value": 0.8635,
-      "display": "86.4%",
+      "value": 0.8607,
+      "display": "86.1%",
       "target": "≥ 85%",
       "pass": true,
       "primary": true,
-      "note": "检测模型 visdrone-yolov9e；类别一致；按大类 92.1%；不排除不可见目标时 52.7%"
+      "note": "检测模型 multimo-visdrone-ensemble；类别一致；按大类 91.0%；不排除不可见目标时 68.8%"
     },
     {
       "id": "detection_miss",
       "name": "目标识别漏检率",
-      "value": 0.2574,
-      "display": "25.7%",
+      "value": 0.1652,
+      "display": "16.5%",
       "target": "≤ 5%",
       "pass": false,
       "primary": true,
-      "note": "按大类 20.7%"
+      "note": "按大类 11.6%"
     },
     {
       "id": "geo_visual",
@@ -90,28 +90,28 @@
     {
       "id": "retrieval_precision",
       "name": "检索准确率",
-      "value": 0.8655,
-      "display": "86.6%",
+      "value": 0.8942,
+      "display": "89.4%",
       "target": "≥ 85%",
       "pass": true,
       "primary": true,
-      "note": "P@10 0.350，P@5 0.496"
+      "note": "P@10 0.372，P@5 0.524"
     },
     {
       "id": "retrieval_recall",
       "name": "检索查全率",
-      "value": 0.8572,
-      "display": "85.7%",
+      "value": 0.8816,
+      "display": "88.2%",
       "target": "≥ 80%",
       "pass": true,
       "primary": true,
-      "note": "R@10 0.788，R@5 0.709"
+      "note": "R@10 0.810，R@5 0.731"
     },
     {
       "id": "retrieval_set",
       "name": "检索（系统判为相关的结果）",
-      "value": 0.7319,
-      "display": "精确率 73.2% / 查全率 76.6%",
+      "value": 0.7826,
+      "display": "精确率 78.3% / 查全率 77.1%",
       "target": "—",
       "pass": true,
       "primary": false
@@ -199,47 +199,47 @@
         "id": "visdrone_vid:uav0000086_00000_v",
         "keyframes": 4,
         "evaluated": 4,
-        "f1": 0.7402,
-        "precision": 0.8387,
-        "recall": 0.6624,
+        "f1": 0.8375,
+        "precision": 0.8221,
+        "recall": 0.8535,
         "categoryJaccard": 0.725,
-        "semanticCosine": 0.8979,
+        "semanticCosine": 0.898,
         "match": {
-          "TP": 104,
-          "FP": 20,
-          "FN": 53,
-          "Ignored": 11
+          "TP": 134,
+          "FP": 29,
+          "FN": 23,
+          "Ignored": 14
         }
       },
       {
         "id": "visdrone_vid:uav0000182_00000_v",
         "keyframes": 7,
         "evaluated": 7,
-        "f1": 0.6186,
-        "precision": 0.5366,
-        "recall": 0.7303,
-        "categoryJaccard": 0.8172,
-        "semanticCosine": 0.9653,
+        "f1": 0.6987,
+        "precision": 0.63,
+        "recall": 0.7842,
+        "categoryJaccard": 0.8427,
+        "semanticCosine": 0.9613,
         "match": {
-          "TP": 176,
-          "FP": 152,
-          "FN": 65,
-          "Ignored": 53
+          "TP": 189,
+          "FP": 111,
+          "FN": 52,
+          "Ignored": 35
         }
       },
       {
         "id": "visdrone_vid:uav0000305_00000_v",
         "keyframes": 3,
         "evaluated": 3,
-        "f1": 0.6218,
-        "precision": 0.4933,
-        "recall": 0.8409,
-        "categoryJaccard": 0.7,
-        "semanticCosine": 0.9693,
+        "f1": 0.7571,
+        "precision": 0.7528,
+        "recall": 0.7614,
+        "categoryJaccard": 0.6167,
+        "semanticCosine": 0.9484,
         "match": {
-          "TP": 74,
-          "FP": 76,
-          "FN": 14,
+          "TP": 67,
+          "FP": 22,
+          "FN": 21,
           "Ignored": 8
         }
       },
@@ -247,151 +247,151 @@
         "id": "visdrone_vid:uav0000339_00001_v",
         "keyframes": 3,
         "evaluated": 3,
-        "f1": 0.6729,
-        "precision": 0.7826,
-        "recall": 0.5902,
-        "categoryJaccard": 0.7315,
-        "semanticCosine": 0.977,
+        "f1": 0.7545,
+        "precision": 0.8469,
+        "recall": 0.6803,
+        "categoryJaccard": 0.7685,
+        "semanticCosine": 0.9804,
         "match": {
-          "TP": 72,
-          "FP": 20,
-          "FN": 50,
-          "Ignored": 16
+          "TP": 83,
+          "FP": 15,
+          "FN": 39,
+          "Ignored": 5
         }
       },
       {
         "id": "uavdt:M0202",
         "keyframes": 1,
         "evaluated": 1,
-        "f1": 0.9524,
+        "f1": 1,
         "precision": 1,
-        "recall": 0.9091,
+        "recall": 1,
         "categoryJaccard": 1,
         "semanticCosine": 1,
         "match": {
-          "TP": 10,
+          "TP": 11,
           "FP": 0,
-          "FN": 1,
-          "Ignored": 9
+          "FN": 0,
+          "Ignored": 14
         }
       },
       {
         "id": "uavdt:M1004",
         "keyframes": 4,
         "evaluated": 4,
-        "f1": 0.7407,
-        "precision": 0.6667,
-        "recall": 0.8333,
+        "f1": 0.9167,
+        "precision": 0.9167,
+        "recall": 0.9167,
         "categoryJaccard": 0.75,
         "semanticCosine": 0.9564,
         "match": {
-          "TP": 10,
-          "FP": 5,
-          "FN": 2,
-          "Ignored": 41
+          "TP": 11,
+          "FP": 1,
+          "FN": 1,
+          "Ignored": 10
         }
       }
     ],
     "match": {
-      "TP": 446,
-      "FP": 273,
-      "FN": 185,
-      "Ignored": 138
+      "TP": 495,
+      "FP": 178,
+      "FN": 136,
+      "Ignored": 86
     },
-    "f1": 0.6607,
-    "categoryJaccard": 0.7688,
-    "semanticCosine": 0.9551,
+    "f1": 0.7592,
+    "categoryJaccard": 0.7707,
+    "semanticCosine": 0.9515,
     "keyframes": 22
   },
   "detection": {
     "images": 100,
     "exact": {
-      "TP": 2297,
-      "FP": 363,
-      "FN": 796,
-      "Ignored": 1702
+      "TP": 2582,
+      "FP": 418,
+      "FN": 511,
+      "Ignored": 754
     },
     "grouped": {
-      "TP": 2452,
-      "FP": 211,
-      "FN": 641,
-      "Ignored": 1699
+      "TP": 2733,
+      "FP": 270,
+      "FN": 360,
+      "Ignored": 751
     },
-    "rawPrecision": 0.5266,
-    "precision": 0.8635,
-    "missRate": 0.2574,
-    "groupedPrecision": 0.9208,
-    "groupedMissRate": 0.2072,
+    "rawPrecision": 0.6878,
+    "precision": 0.8607,
+    "missRate": 0.1652,
+    "groupedPrecision": 0.9101,
+    "groupedMissRate": 0.1164,
     "perClass": [
       {
         "label": "car",
         "gt": 1518,
-        "pred": 2252,
-        "recall": 0.937,
-        "precision": 0.913
+        "pred": 1842,
+        "recall": 0.959,
+        "precision": 0.926
       },
       {
         "label": "pedestrian",
         "gt": 414,
-        "pred": 837,
-        "recall": 0.725,
-        "precision": 0.852
+        "pred": 626,
+        "recall": 0.838,
+        "precision": 0.874
       },
       {
         "label": "motor",
         "gt": 347,
-        "pred": 479,
-        "recall": 0.605,
-        "precision": 0.843
+        "pred": 452,
+        "recall": 0.804,
+        "precision": 0.806
       },
       {
         "label": "people",
         "gt": 229,
-        "pred": 267,
-        "recall": 0.288,
-        "precision": 0.71
+        "pred": 254,
+        "recall": 0.603,
+        "precision": 0.75
       },
       {
         "label": "van",
         "gt": 216,
-        "pred": 207,
-        "recall": 0.602,
-        "precision": 0.734
+        "pred": 217,
+        "recall": 0.671,
+        "precision": 0.732
       },
       {
         "label": "tricycle",
         "gt": 101,
-        "pred": 98,
-        "recall": 0.465,
-        "precision": 0.681
+        "pred": 112,
+        "recall": 0.604,
+        "precision": 0.67
       },
       {
         "label": "bicycle",
         "gt": 88,
-        "pred": 93,
-        "recall": 0.443,
-        "precision": 0.65
+        "pred": 117,
+        "recall": 0.636,
+        "precision": 0.644
       },
       {
         "label": "truck",
         "gt": 85,
-        "pred": 69,
-        "recall": 0.529,
-        "precision": 0.804
+        "pred": 77,
+        "recall": 0.635,
+        "precision": 0.761
       },
       {
         "label": "awning-tricycle",
         "gt": 65,
-        "pred": 27,
-        "recall": 0.215,
-        "precision": 0.7
+        "pred": 31,
+        "recall": 0.338,
+        "precision": 0.786
       },
       {
         "label": "bus",
         "gt": 30,
-        "pred": 33,
+        "pred": 26,
         "recall": 0.8,
-        "precision": 0.889
+        "precision": 0.96
       }
     ],
     "boxSources": {
@@ -842,21 +842,21 @@
         "p10": 0.8,
         "r5": 0.2857,
         "r10": 0.5714,
-        "setPrecision": 0.6667,
-        "setRecall": 0.7143,
-        "flagged": 15,
-        "latencyMs": 2850,
+        "setPrecision": 0.8,
+        "setRecall": 0.5714,
+        "flagged": 10,
+        "latencyMs": 2627,
         "top": [
-          "image/visdrone_det_val/images/0000244_05900_d_0000013.jpg",
-          "*image/visdrone_det_val/images/0000280_03401_d_0000629.jpg",
-          "*image/visdrone_det_val/images/0000244_01000_d_0000003.jpg",
-          "*image/visdrone_det_val/images/0000249_02900_d_0000009.jpg",
           "*image/visdrone_det_val/images/0000153_01801_d_0000001.jpg",
+          "image/visdrone_det_val/images/0000244_05900_d_0000013.jpg",
+          "*image/visdrone_det_val/images/0000244_01000_d_0000003.jpg",
+          "*image/visdrone_det_val/images/0000280_03401_d_0000629.jpg",
           "*image/visdrone_det_val/images/0000291_01001_d_0000873.jpg",
+          "*image/visdrone_det_val/images/0000249_02900_d_0000009.jpg",
           "*image/visdrone_det_val/images/0000295_01600_d_0000029.jpg",
-          "*image/visdrone_det_val/images/0000295_00600_d_0000024.jpg",
-          "*image/visdrone_det_val/images/0000244_03500_d_0000008.jpg",
-          "image/visdrone_det_val/images/0000213_02965_d_0000241.jpg"
+          "image/visdrone_det_val/images/0000213_02965_d_0000241.jpg",
+          "*image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
+          "*image/visdrone_det_val/images/0000295_00600_d_0000024.jpg"
         ]
       },
       {
@@ -864,27 +864,27 @@
         "type": "object",
         "query": "画面里有卡车的航拍图像",
         "relevant": 39,
-        "precision": 1,
+        "precision": 0.9,
         "recall": 0.7692,
         "p5": 1,
-        "p10": 1,
+        "p10": 0.9,
         "r5": 0.1282,
-        "r10": 0.2564,
-        "setPrecision": 0.8286,
-        "setRecall": 0.7436,
-        "flagged": 35,
-        "latencyMs": 3132,
+        "r10": 0.2308,
+        "setPrecision": 0.7692,
+        "setRecall": 0.7692,
+        "flagged": 39,
+        "latencyMs": 2569,
         "top": [
-          "*image/visdrone_det_val/images/0000276_00601_d_0000510.jpg",
           "*image/visdrone_det_val/images/0000312_00001_d_0000414.jpg",
           "*image/visdrone_det_val/images/0000076_02142_d_0000009.jpg",
           "*image/visdrone_det_val/images/0000215_03226_d_0000264.jpg",
           "*image/visdrone_det_val/images/0000256_02173_d_0000030.jpg",
-          "*image/visdrone_det_val/images/0000242_00001_d_0000001.jpg",
           "*image/visdrone_det_val/images/0000162_00801_d_0000001.jpg",
-          "*image/visdrone_det_val/images/0000276_04001_d_0000527.jpg",
+          "*image/visdrone_det_val/images/0000276_00601_d_0000510.jpg",
+          "image/visdrone_det_val/images/0000335_00197_d_0000044.jpg",
           "*image/visdrone_det_val/images/0000271_01201_d_0000379.jpg",
-          "*image/visdrone_det_val/images/0000244_05900_d_0000013.jpg"
+          "*image/visdrone_det_val/images/0000242_01139_d_0000006.jpg",
+          "*image/visdrone_det_val/images/0000316_01601_d_0000527.jpg"
         ]
       },
       {
@@ -892,27 +892,27 @@
         "type": "object",
         "query": "出现带篷三轮车的路口或街道",
         "relevant": 27,
-        "precision": 0.4,
-        "recall": 0.5185,
-        "p5": 0.4,
-        "p10": 0.4,
-        "r5": 0.0741,
-        "r10": 0.1481,
-        "setPrecision": 0.5238,
-        "setRecall": 0.4074,
-        "flagged": 21,
-        "latencyMs": 2950,
+        "precision": 0.7,
+        "recall": 0.6667,
+        "p5": 0.8,
+        "p10": 0.7,
+        "r5": 0.1481,
+        "r10": 0.2593,
+        "setPrecision": 0.6818,
+        "setRecall": 0.5556,
+        "flagged": 22,
+        "latencyMs": 2691,
         "top": [
-          "image/visdrone_det_val/images/0000316_01601_d_0000527.jpg",
-          "*image/visdrone_det_val/images/0000346_02549_d_0000359.jpg",
-          "image/visdrone_det_val/images/0000194_00998_d_0000124.jpg",
-          "image/visdrone_det_val/images/0000277_04401_d_0000560.jpg",
+          "*image/visdrone_det_val/images/0000155_01201_d_0000001.jpg",
           "*image/visdrone_det_val/images/0000193_02029_d_0000114.jpg",
+          "*image/visdrone_det_val/images/0000346_02549_d_0000359.jpg",
           "*image/visdrone_det_val/images/0000271_00001_d_0000374.jpg",
+          "image/visdrone_det_val/images/0000249_02900_d_0000009.jpg",
           "image/visdrone_det_val/images/0000277_01801_d_0000548.jpg",
-          "image/visdrone_det_val/images/0000249_01100_d_0000004.jpg",
           "image/visdrone_det_val/images/0000356_02157_d_0000640.jpg",
-          "*image/visdrone_det_val/images/0000155_01201_d_0000001.jpg"
+          "*image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
+          "*image/visdrone_det_val/images/0000301_00201_d_0000157.jpg",
+          "*image/visdrone_det_val/images/0000335_06861_d_0000078.jpg"
         ]
       },
       {
@@ -920,27 +920,27 @@
         "type": "object",
         "query": "有人骑自行车的航拍画面",
         "relevant": 37,
-        "precision": 0.6,
-        "recall": 0.6216,
+        "precision": 0.7,
+        "recall": 0.7297,
         "p5": 0.6,
-        "p10": 0.6,
+        "p10": 0.7,
         "r5": 0.0811,
-        "r10": 0.1622,
-        "setPrecision": 0.6383,
+        "r10": 0.1892,
+        "setPrecision": 0.6667,
         "setRecall": 0.8108,
-        "flagged": 47,
-        "latencyMs": 2871,
+        "flagged": 45,
+        "latencyMs": 2685,
         "top": [
-          "image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
-          "image/visdrone_det_val/images/0000022_01251_d_0000007.jpg",
-          "*image/visdrone_det_val/images/0000277_03201_d_0000554.jpg",
           "*image/visdrone_det_val/images/0000327_00001_d_0000711.jpg",
-          "*image/visdrone_det_val/images/0000289_04401_d_0000833.jpg",
           "*image/visdrone_det_val/images/0000166_00558_d_0000118.jpg",
-          "*image/visdrone_det_val/images/0000335_03137_d_0000059.jpg",
-          "image/visdrone_det_val/images/0000301_00201_d_0000157.jpg",
-          "image/visdrone_det_val/images/0000153_00001_d_0000001.jpg",
-          "*image/visdrone_det_val/images/0000287_00001_d_0000759.jpg"
+          "*image/visdrone_det_val/images/0000289_00001_d_0000811.jpg",
+          "image/visdrone_det_val/images/0000289_02201_d_0000822.jpg",
+          "image/visdrone_det_val/images/0000154_01601_d_0000001.jpg",
+          "*image/visdrone_det_val/images/0000289_04401_d_0000833.jpg",
+          "*image/visdrone_det_val/images/0000277_03201_d_0000554.jpg",
+          "*image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
+          "*image/visdrone_det_val/images/0000287_00001_d_0000759.jpg",
+          "image/visdrone_det_val/images/0000117_01326_d_0000088.jpg"
         ]
       },
       {
@@ -948,27 +948,27 @@
         "type": "object",
         "query": "摩托车很多的街景（10 辆以上）",
         "relevant": 10,
-        "precision": 0.6,
-        "recall": 0.6,
+        "precision": 0.8,
+        "recall": 0.8,
         "p5": 0.8,
-        "p10": 0.6,
+        "p10": 0.8,
         "r5": 0.4,
-        "r10": 0.6,
-        "setPrecision": 0.5714,
-        "setRecall": 0.8,
+        "r10": 0.8,
+        "setPrecision": 0.6429,
+        "setRecall": 0.9,
         "flagged": 14,
-        "latencyMs": 2219,
+        "latencyMs": 2249,
         "top": [
-          "*image/visdrone_det_val/images/0000289_05401_d_0000838.jpg",
           "*image/visdrone_det_val/images/0000271_00001_d_0000374.jpg",
+          "*image/visdrone_det_val/images/0000289_05401_d_0000838.jpg",
           "*image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
-          "image/visdrone_det_val/images/0000153_01801_d_0000001.jpg",
           "*image/visdrone_det_val/images/0000001_02999_d_0000005.jpg",
+          "image/visdrone_det_val/images/0000291_05001_d_0000892.jpg",
+          "*image/visdrone_det_val/images/0000271_05201_d_0000398.jpg",
           "image/visdrone_det_val/images/0000116_00351_d_0000083.jpg",
-          "image/visdrone_det_val/images/0000155_01201_d_0000001.jpg",
-          "image/visdrone_det_val/images/0000193_02029_d_0000114.jpg",
-          "*image/visdrone_det_val/images/0000271_06201_d_0000403.jpg",
-          "*image/visdrone_det_val/images/0000289_04401_d_0000833.jpg"
+          "*image/visdrone_det_val/images/0000289_04401_d_0000833.jpg",
+          "*image/visdrone_det_val/images/0000330_01401_d_0000807.jpg",
+          "*image/visdrone_det_val/images/0000271_06201_d_0000403.jpg"
         ]
       },
       {
@@ -976,26 +976,26 @@
         "type": "object",
         "query": "行人密集的场景（20 人以上）",
         "relevant": 7,
-        "precision": 0.7143,
-        "recall": 0.7143,
-        "p5": 0.6,
-        "p10": 0.5,
-        "r5": 0.4286,
-        "r10": 0.7143,
-        "setPrecision": 0.5455,
+        "precision": 1,
+        "recall": 1,
+        "p5": 1,
+        "p10": 0.7,
+        "r5": 0.7143,
+        "r10": 1,
+        "setPrecision": 0.75,
         "setRecall": 0.8571,
-        "flagged": 11,
-        "latencyMs": 2163,
+        "flagged": 8,
+        "latencyMs": 2168,
         "top": [
-          "*image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
           "*image/visdrone_det_val/images/0000055_00000_d_0000109.jpg",
-          "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
-          "*image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
-          "image/visdrone_det_val/images/0000295_00600_d_0000024.jpg",
-          "*image/visdrone_det_val/images/0000291_02001_d_0000878.jpg",
+          "*image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
           "*image/visdrone_det_val/images/0000291_05001_d_0000892.jpg",
+          "*image/visdrone_det_val/images/0000291_02001_d_0000878.jpg",
+          "*image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
+          "*image/visdrone_det_val/images/0000289_04401_d_0000833.jpg",
+          "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
           "image/visdrone_det_val/images/0000213_05340_d_0000246.jpg",
-          "image/visdrone_det_val/images/0000117_01326_d_0000088.jpg",
+          "*image/visdrone_det_val/images/0000069_01109_d_0000004.jpg",
           "image/visdrone_det_val/images/0000295_01600_d_0000029.jpg"
         ]
       },
@@ -1004,27 +1004,27 @@
         "type": "object",
         "query": "停满小汽车的停车场或道路（40 辆以上）",
         "relevant": 4,
-        "precision": 0.75,
-        "recall": 0.75,
-        "p5": 0.6,
-        "p10": 0.3,
-        "r5": 0.75,
-        "r10": 0.75,
-        "setPrecision": 0.3077,
+        "precision": 1,
+        "recall": 1,
+        "p5": 0.8,
+        "p10": 0.4,
+        "r5": 1,
+        "r10": 1,
+        "setPrecision": 1,
         "setRecall": 1,
-        "flagged": 13,
-        "latencyMs": 2127,
+        "flagged": 4,
+        "latencyMs": 2167,
         "top": [
           "*image/visdrone_det_val/images/0000001_05499_d_0000010.jpg",
           "*image/visdrone_det_val/images/0000312_00001_d_0000414.jpg",
           "*image/visdrone_det_val/images/0000271_06201_d_0000403.jpg",
-          "image/visdrone_det_val/images/0000330_00401_d_0000802.jpg",
-          "image/visdrone_det_val/images/0000330_01401_d_0000807.jpg",
-          "image/visdrone_det_val/images/0000295_01600_d_0000029.jpg",
-          "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
-          "image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
-          "image/visdrone_det_val/images/0000277_00001_d_0000539.jpg",
-          "image/visdrone_det_val/images/0000280_01401_d_0000619.jpg"
+          "*image/visdrone_det_val/images/0000291_02001_d_0000878.jpg",
+          "image/visdrone_det_val/images/0000333_02157_d_0000012.jpg",
+          "image/visdrone_det_val/images/0000026_00500_d_0000025.jpg",
+          "image/visdrone_det_val/images/0000026_03000_d_0000030.jpg",
+          "image/visdrone_det_val/images/0000290_04001_d_0000867.jpg",
+          "image/visdrone_det_val/images/0000346_02549_d_0000359.jpg",
+          "image/visdrone_det_val/images/0000312_02201_d_0000425.jpg"
         ]
       },
       {
@@ -1032,26 +1032,26 @@
         "type": "object",
         "query": "几乎看不到小汽车的画面",
         "relevant": 14,
-        "precision": 0.9,
-        "recall": 0.8571,
+        "precision": 1,
+        "recall": 0.7857,
         "p5": 1,
-        "p10": 0.9,
+        "p10": 1,
         "r5": 0.3571,
-        "r10": 0.6429,
-        "setPrecision": 0.9167,
-        "setRecall": 0.7857,
-        "flagged": 12,
-        "latencyMs": 2439,
+        "r10": 0.7143,
+        "setPrecision": 1,
+        "setRecall": 0.7143,
+        "flagged": 10,
+        "latencyMs": 2121,
         "top": [
           "*image/visdrone_det_val/images/0000076_02142_d_0000009.jpg",
           "*image/visdrone_det_val/images/0000021_00500_d_0000002.jpg",
-          "*image/visdrone_det_val/images/0000069_01109_d_0000004.jpg",
           "*image/visdrone_det_val/images/0000024_00000_d_0000012.jpg",
-          "*image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
-          "*image/visdrone_det_val/images/0000055_00000_d_0000109.jpg",
           "*image/visdrone_det_val/images/0000022_01251_d_0000007.jpg",
-          "image/visdrone_det_val/images/0000313_07001_d_0000471.jpg",
+          "*image/visdrone_det_val/images/0000069_01109_d_0000004.jpg",
           "*image/visdrone_det_val/images/0000103_02544_d_0000029.jpg",
+          "*image/visdrone_det_val/images/0000055_00000_d_0000109.jpg",
+          "*image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
+          "*image/visdrone_det_val/images/0000271_07201_d_0000408.jpg",
           "*image/visdrone_det_val/images/0000103_04513_d_0000034.jpg"
         ]
       },
@@ -1062,25 +1062,25 @@
         "relevant": 7,
         "precision": 0.5714,
         "recall": 0.5714,
-        "p5": 0.6,
+        "p5": 0.8,
         "p10": 0.4,
-        "r5": 0.4286,
+        "r5": 0.5714,
         "r10": 0.5714,
-        "setPrecision": 0.4444,
+        "setPrecision": 0.8,
         "setRecall": 0.5714,
-        "flagged": 9,
-        "latencyMs": 2217,
+        "flagged": 5,
+        "latencyMs": 2160,
         "top": [
           "*image/visdrone_det_val/images/0000291_01001_d_0000873.jpg",
-          "image/visdrone_det_val/images/0000244_05900_d_0000013.jpg",
           "*image/visdrone_det_val/images/0000280_03401_d_0000629.jpg",
           "*image/visdrone_det_val/images/0000249_02900_d_0000009.jpg",
-          "image/visdrone_det_val/images/0000244_01000_d_0000003.jpg",
-          "image/visdrone_det_val/images/0000242_01139_d_0000006.jpg",
-          "image/visdrone_det_val/images/0000327_03801_d_0000730.jpg",
-          "image/visdrone_det_val/images/0000276_02001_d_0000517.jpg",
-          "*image/visdrone_det_val/images/0000244_03500_d_0000008.jpg",
-          "image/visdrone_det_val/images/0000076_02142_d_0000009.jpg"
+          "*image/visdrone_det_val/images/0000276_04001_d_0000527.jpg",
+          "image/visdrone_det_val/images/0000213_02965_d_0000241.jpg",
+          "image/visdrone_det_val/images/0000076_02142_d_0000009.jpg",
+          "image/visdrone_det_val/images/0000276_00601_d_0000510.jpg",
+          "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
+          "image/visdrone_det_val/images/0000330_01401_d_0000807.jpg",
+          "image/visdrone_det_val/images/0000215_03226_d_0000264.jpg"
         ]
       },
       {
@@ -1088,27 +1088,27 @@
         "type": "object",
         "query": "有三轮车行驶的街道",
         "relevant": 45,
-        "precision": 0.5,
-        "recall": 0.6667,
+        "precision": 0.8,
+        "recall": 0.6444,
         "p5": 0.8,
-        "p10": 0.5,
+        "p10": 0.8,
         "r5": 0.0889,
-        "r10": 0.1111,
-        "setPrecision": 0.6735,
-        "setRecall": 0.7333,
-        "flagged": 49,
-        "latencyMs": 2242,
+        "r10": 0.1778,
+        "setPrecision": 0.64,
+        "setRecall": 0.7111,
+        "flagged": 50,
+        "latencyMs": 2710,
         "top": [
-          "image/visdrone_det_val/images/0000249_01100_d_0000004.jpg",
-          "*image/visdrone_det_val/images/0000155_01201_d_0000001.jpg",
-          "*image/visdrone_det_val/images/0000244_03500_d_0000008.jpg",
           "*image/visdrone_det_val/images/0000335_00197_d_0000044.jpg",
-          "*image/visdrone_det_val/images/0000287_01001_d_0000764.jpg",
-          "image/visdrone_det_val/images/0000162_00801_d_0000001.jpg",
-          "image/visdrone_det_val/images/0000242_03199_d_0000011.jpg",
+          "image/visdrone_det_val/images/0000249_01100_d_0000004.jpg",
+          "*image/visdrone_det_val/images/0000244_03500_d_0000008.jpg",
+          "*image/visdrone_det_val/images/0000289_01001_d_0000816.jpg",
           "*image/visdrone_det_val/images/0000244_01000_d_0000003.jpg",
           "image/visdrone_det_val/images/0000242_00001_d_0000001.jpg",
-          "image/visdrone_det_val/images/0000271_03001_d_0000387.jpg"
+          "*image/visdrone_det_val/images/0000155_01201_d_0000001.jpg",
+          "*image/visdrone_det_val/images/0000287_01001_d_0000764.jpg",
+          "*image/visdrone_det_val/images/0000271_01201_d_0000379.jpg",
+          "*image/visdrone_det_val/images/0000249_02900_d_0000009.jpg"
         ]
       },
       {
@@ -1116,27 +1116,27 @@
         "type": "object",
         "query": "多辆面包车（3 辆以上）",
         "relevant": 28,
-        "precision": 0.8,
+        "precision": 0.6,
         "recall": 0.6786,
         "p5": 0.8,
-        "p10": 0.8,
+        "p10": 0.6,
         "r5": 0.1429,
-        "r10": 0.2857,
-        "setPrecision": 0.6818,
+        "r10": 0.2143,
+        "setPrecision": 0.75,
         "setRecall": 0.5357,
-        "flagged": 22,
-        "latencyMs": 2203,
+        "flagged": 20,
+        "latencyMs": 2178,
         "top": [
-          "*image/visdrone_det_val/images/0000256_02173_d_0000030.jpg",
-          "*image/visdrone_det_val/images/0000333_02157_d_0000012.jpg",
-          "image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
-          "*image/visdrone_det_val/images/0000291_01001_d_0000873.jpg",
           "*image/visdrone_det_val/images/0000289_06401_d_0000843.jpg",
-          "*image/visdrone_det_val/images/0000327_00001_d_0000711.jpg",
+          "*image/visdrone_det_val/images/0000256_02173_d_0000030.jpg",
+          "image/visdrone_det_val/images/0000280_03401_d_0000629.jpg",
+          "*image/visdrone_det_val/images/0000330_01401_d_0000807.jpg",
           "*image/visdrone_det_val/images/0000291_05001_d_0000892.jpg",
           "image/visdrone_det_val/images/0000356_02157_d_0000640.jpg",
-          "*image/visdrone_det_val/images/0000327_03801_d_0000730.jpg",
-          "*image/visdrone_det_val/images/0000330_01401_d_0000807.jpg"
+          "*image/visdrone_det_val/images/0000291_01001_d_0000873.jpg",
+          "image/visdrone_det_val/images/0000213_02965_d_0000241.jpg",
+          "*image/visdrone_det_val/images/0000280_00401_d_0000614.jpg",
+          "image/visdrone_det_val/images/0000291_03601_d_0000886.jpg"
         ]
       },
       {
@@ -1144,27 +1144,27 @@
         "type": "object",
         "query": "有人群聚集（10 人以上非行走人员）",
         "relevant": 5,
-        "precision": 0.6,
-        "recall": 0.6,
-        "p5": 0.2,
-        "p10": 0.3,
-        "r5": 0.2,
-        "r10": 0.6,
-        "setPrecision": 0,
-        "setRecall": 0,
+        "precision": 0.8,
+        "recall": 0.8,
+        "p5": 0.6,
+        "p10": 0.4,
+        "r5": 0.6,
+        "r10": 0.8,
+        "setPrecision": 0.5,
+        "setRecall": 0.2,
         "flagged": 2,
-        "latencyMs": 2136,
+        "latencyMs": 2086,
         "top": [
-          "image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
-          "image/visdrone_det_val/images/0000335_03137_d_0000059.jpg",
-          "image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
-          "image/visdrone_det_val/images/0000295_02900_d_0000034.jpg",
           "*image/visdrone_det_val/images/0000291_03601_d_0000886.jpg",
+          "image/visdrone_det_val/images/0000356_00589_d_0000632.jpg",
           "*image/visdrone_det_val/images/0000055_00000_d_0000109.jpg",
+          "image/visdrone_det_val/images/0000086_01443_d_0000004.jpg",
+          "*image/visdrone_det_val/images/0000291_05001_d_0000892.jpg",
           "image/visdrone_det_val/images/0000117_01326_d_0000088.jpg",
-          "*image/visdrone_det_val/images/0000291_02001_d_0000878.jpg",
           "image/visdrone_det_val/images/0000069_01109_d_0000004.jpg",
-          "image/visdrone_det_val/images/0000312_02201_d_0000425.jpg"
+          "image/visdrone_det_val/images/0000022_01251_d_0000007.jpg",
+          "image/visdrone_det_val/images/0000356_02157_d_0000640.jpg",
+          "*image/visdrone_det_val/images/0000291_02001_d_0000878.jpg"
         ]
       },
       {
@@ -1181,11 +1181,11 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 4,
-        "latencyMs": 1095,
+        "latencyMs": 1131,
         "top": [
+          "*video/uavdt/mp4/M1004.mp4",
           "*video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "*video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
-          "*video/uavdt/mp4/M1004.mp4",
           "*video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
           "video/uavdt/mp4/M0202.mp4",
           "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4"
@@ -1205,7 +1205,7 @@
         "setPrecision": 0.5,
         "setRecall": 1,
         "flagged": 2,
-        "latencyMs": 1138,
+        "latencyMs": 1111,
         "top": [
           "*video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
           "video/uavdt/mp4/M1004.mp4",
@@ -1229,11 +1229,11 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 3,
-        "latencyMs": 1105,
+        "latencyMs": 1036,
         "top": [
           "*video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
-          "*video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "*video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
+          "*video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "video/uavdt/mp4/M0202.mp4",
           "video/uavdt/mp4/M1004.mp4",
           "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4"
@@ -1250,16 +1250,16 @@
         "p10": 0.3,
         "r5": 1,
         "r10": 1,
-        "setPrecision": 0.6667,
+        "setPrecision": 1,
         "setRecall": 0.6667,
-        "flagged": 3,
-        "latencyMs": 1118,
+        "flagged": 2,
+        "latencyMs": 1230,
         "top": [
           "*video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "*video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
-          "video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
           "*video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4",
           "video/uavdt/mp4/M0202.mp4",
+          "video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4",
           "video/uavdt/mp4/M1004.mp4"
         ]
       },
@@ -1277,12 +1277,12 @@
         "setPrecision": 0.5,
         "setRecall": 1,
         "flagged": 2,
-        "latencyMs": 1155,
+        "latencyMs": 1104,
         "top": [
           "video/uavdt/mp4/M1004.mp4",
           "*video/uavdt/mp4/M0202.mp4",
-          "video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
+          "video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
           "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4",
           "video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4"
         ]
@@ -1301,12 +1301,12 @@
         "setPrecision": 0,
         "setRecall": 0,
         "flagged": 0,
-        "latencyMs": 1091,
+        "latencyMs": 1475,
         "top": [
           "*video/uavdt/mp4/M1004.mp4",
+          "video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
           "video/uavdt/mp4/M0202.mp4",
           "video/visdrone_vid_val/mp4/uav0000339_00001_v.mp4",
-          "video/visdrone_vid_val/mp4/uav0000182_00000_v.mp4",
           "video/visdrone_vid_val/mp4/uav0000086_00000_v.mp4",
           "video/visdrone_vid_val/mp4/uav0000305_00000_v.mp4"
         ]
@@ -1325,7 +1325,7 @@
         "setPrecision": 0.5,
         "setRecall": 0.1429,
         "flagged": 2,
-        "latencyMs": 896,
+        "latencyMs": 904,
         "top": [
           "*remote_sensing/dota_v2_val/images/P6519.png",
           "remote_sensing/dota_v2_val/images/P10105.png",
@@ -1353,18 +1353,18 @@
         "setPrecision": 0.8333,
         "setRecall": 1,
         "flagged": 6,
-        "latencyMs": 882,
+        "latencyMs": 881,
         "top": [
           "*remote_sensing/dota_v2_val/images/P8877.png",
           "*remote_sensing/dota_v2_val/images/P9444.png",
           "*remote_sensing/dota_v2_val/images/P3185.png",
-          "remote_sensing/dota_v2_val/images/P10956.png",
           "*remote_sensing/dota_v2_val/images/P7485.png",
+          "remote_sensing/dota_v2_val/images/P10956.png",
           "*remote_sensing/dota_v2_val/images/P6347.png",
           "remote_sensing/dota_v2_val/images/P3182.png",
           "remote_sensing/dota_v2_val/images/P8392.png",
-          "remote_sensing/dota_v2_val/images/P6089.png",
-          "remote_sensing/dota_v2_val/images/P6519.png"
+          "remote_sensing/dota_v2_val/images/P6519.png",
+          "remote_sensing/dota_v2_val/images/P6089.png"
         ]
       },
       {
@@ -1381,7 +1381,7 @@
         "setPrecision": 1,
         "setRecall": 0.8182,
         "flagged": 9,
-        "latencyMs": 883,
+        "latencyMs": 967,
         "top": [
           "*remote_sensing/dota_v2_val/images/P3466.png",
           "*remote_sensing/dota_v2_val/images/P10956.png",
@@ -1409,7 +1409,7 @@
         "setPrecision": 0.5,
         "setRecall": 0.5,
         "flagged": 2,
-        "latencyMs": 888,
+        "latencyMs": 993,
         "top": [
           "*remote_sensing/dota_v2_val/images/P6519.png",
           "remote_sensing/dota_v2_val/images/P3044.png",
@@ -1437,7 +1437,7 @@
         "setPrecision": 0,
         "setRecall": 0,
         "flagged": 2,
-        "latencyMs": 860,
+        "latencyMs": 1052,
         "top": [
           "remote_sensing/dota_v2_val/images/P10105.png",
           "remote_sensing/dota_v2_val/images/P3044.png",
@@ -1465,7 +1465,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 3,
-        "latencyMs": 961,
+        "latencyMs": 984,
         "top": [
           "*remote_sensing/dota_v2_val/images/P7799.png",
           "*remote_sensing/dota_v2_val/images/P4265.png",
@@ -1493,7 +1493,7 @@
         "setPrecision": 0.5,
         "setRecall": 1,
         "flagged": 4,
-        "latencyMs": 877,
+        "latencyMs": 1325,
         "top": [
           "remote_sensing/dota_v2_val/images/P4947.png",
           "*remote_sensing/dota_v2_val/images/P7800.png",
@@ -1521,7 +1521,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 2,
-        "latencyMs": 863,
+        "latencyMs": 1109,
         "top": [
           "*remote_sensing/dota_v2_val/images/P3575.png",
           "*remote_sensing/dota_v2_val/images/P7485.png",
@@ -1530,9 +1530,9 @@
           "remote_sensing/dota_v2_val/images/P3185.png",
           "remote_sensing/dota_v2_val/images/P4265.png",
           "remote_sensing/dota_v2_val/images/P6089.png",
+          "remote_sensing/dota_v2_val/images/P7800.png",
           "remote_sensing/dota_v2_val/images/P4138.png",
-          "remote_sensing/dota_v2_val/images/P6519.png",
-          "remote_sensing/dota_v2_val/images/P7800.png"
+          "remote_sensing/dota_v2_val/images/P6519.png"
         ]
       },
       {
@@ -1549,7 +1549,7 @@
         "setPrecision": 1,
         "setRecall": 0.5,
         "flagged": 1,
-        "latencyMs": 889,
+        "latencyMs": 897,
         "top": [
           "*remote_sensing/dota_v2_val/images/P3575.png",
           "remote_sensing/dota_v2_val/images/P4947.png",
@@ -1577,7 +1577,7 @@
         "setPrecision": 0.4,
         "setRecall": 1,
         "flagged": 5,
-        "latencyMs": 893,
+        "latencyMs": 886,
         "top": [
           "remote_sensing/dota_v2_val/images/P4947.png",
           "*remote_sensing/dota_v2_val/images/P7800.png",
@@ -1605,7 +1605,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 537,
+        "latencyMs": 442,
         "top": [
           "*geo/uav_visloc/01/drone/01_0051.JPG",
           "geo/uav_visloc/01/drone/01_0111.JPG",
@@ -1626,7 +1626,7 @@
         "setPrecision": 1,
         "setRecall": 0.6667,
         "flagged": 2,
-        "latencyMs": 395,
+        "latencyMs": 427,
         "top": [
           "*geo/uav_visloc/01/drone/01_0251.JPG",
           "*geo/uav_visloc/01/drone/01_0231.JPG",
@@ -1649,12 +1649,12 @@
         "setPrecision": 0.1667,
         "setRecall": 0.2,
         "flagged": 6,
-        "latencyMs": 398,
+        "latencyMs": 447,
         "top": [
           "geo/uav_visloc/01/drone/01_0191.JPG",
           "geo/uav_visloc/01/drone/01_0361.JPG",
-          "geo/uav_visloc/01/drone/01_0121.JPG",
           "geo/uav_visloc/01/drone/01_0691.JPG",
+          "geo/uav_visloc/01/drone/01_0121.JPG",
           "geo/uav_visloc/01/drone/01_0781.JPG",
           "*geo/uav_visloc/01/drone/01_0351.JPG",
           "geo/uav_visloc/01/drone/01_0681.JPG"
@@ -1674,7 +1674,7 @@
         "setPrecision": 1,
         "setRecall": 0.3333,
         "flagged": 1,
-        "latencyMs": 409,
+        "latencyMs": 376,
         "top": [
           "*geo/uav_visloc/01/drone/01_0701.JPG",
           "geo/uav_visloc/01/drone/01_0531.JPG",
@@ -1696,18 +1696,18 @@
         "setPrecision": 0.9474,
         "setRecall": 0.8182,
         "flagged": 19,
-        "latencyMs": 376,
+        "latencyMs": 405,
         "top": [
           "geo/uav_visloc/01/drone/01_0451.JPG",
-          "*geo/uav_visloc/01/drone/01_0441.JPG",
           "*geo/uav_visloc/01/drone/01_0431.JPG",
-          "*geo/uav_visloc/01/drone/01_0381.JPG",
+          "*geo/uav_visloc/01/drone/01_0441.JPG",
+          "*geo/uav_visloc/01/drone/01_0761.JPG",
           "*geo/uav_visloc/01/drone/01_0751.JPG",
           "*geo/uav_visloc/01/drone/01_0041.JPG",
-          "*geo/uav_visloc/01/drone/01_0111.JPG",
-          "*geo/uav_visloc/01/drone/01_0761.JPG",
-          "*geo/uav_visloc/01/drone/01_0051.JPG",
-          "*geo/uav_visloc/01/drone/01_0711.JPG"
+          "*geo/uav_visloc/01/drone/01_0381.JPG",
+          "*geo/uav_visloc/01/drone/01_0371.JPG",
+          "*geo/uav_visloc/01/drone/01_0281.JPG",
+          "*geo/uav_visloc/01/drone/01_0051.JPG"
         ]
       },
       {
@@ -1716,26 +1716,26 @@
         "query": "东经115.9893°以东拍摄的航拍图像",
         "relevant": 17,
         "precision": 0.8,
-        "recall": 0.7059,
-        "p5": 1,
+        "recall": 0.8235,
+        "p5": 0.8,
         "p10": 0.8,
-        "r5": 0.2941,
+        "r5": 0.2353,
         "r10": 0.4706,
         "setPrecision": 0.6818,
         "setRecall": 0.8824,
         "flagged": 22,
-        "latencyMs": 420,
+        "latencyMs": 440,
         "top": [
-          "*geo/uav_visloc/01/drone/01_0731.JPG",
+          "*geo/uav_visloc/01/drone/01_0681.JPG",
           "*geo/uav_visloc/01/drone/01_0741.JPG",
           "*geo/uav_visloc/01/drone/01_0801.JPG",
-          "*geo/uav_visloc/01/drone/01_0651.JPG",
+          "geo/uav_visloc/01/drone/01_0601.JPG",
+          "*geo/uav_visloc/01/drone/01_0731.JPG",
           "*geo/uav_visloc/01/drone/01_0671.JPG",
           "*geo/uav_visloc/01/drone/01_0761.JPG",
           "geo/uav_visloc/01/drone/01_0591.JPG",
-          "*geo/uav_visloc/01/drone/01_0681.JPG",
-          "geo/uav_visloc/01/drone/01_0601.JPG",
-          "*geo/uav_visloc/01/drone/01_0751.JPG"
+          "*geo/uav_visloc/01/drone/01_0751.JPG",
+          "*geo/uav_visloc/01/drone/01_0651.JPG"
         ]
       },
       {
@@ -1752,7 +1752,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 3372,
+        "latencyMs": 2922,
         "top": [
           "*video/dji/palos_verdes/drone_palos_verdes_20250217174636.mp4"
         ]
@@ -1771,7 +1771,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 434,
+        "latencyMs": 440,
         "top": [
           "*video/dji/palos_verdes/drone_palos_verdes_20250217174636.mp4"
         ]
@@ -1790,7 +1790,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 399,
+        "latencyMs": 400,
         "top": [
           "*video/dji/palos_verdes/drone_palos_verdes_20250217174636.mp4"
         ]
@@ -1809,18 +1809,18 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 12,
-        "latencyMs": 429,
+        "latencyMs": 484,
         "top": [
           "*geo/uav_visloc/01/drone/01_0241.JPG",
-          "*geo/uav_visloc/01/drone/01_0271.JPG",
           "*geo/uav_visloc/01/drone/01_0211.JPG",
+          "*geo/uav_visloc/01/drone/01_0271.JPG",
           "*geo/uav_visloc/01/drone/01_0291.JPG",
-          "*geo/uav_visloc/01/drone/01_0231.JPG",
-          "*geo/uav_visloc/01/drone/01_0301.JPG",
-          "*geo/uav_visloc/01/drone/01_0261.JPG",
+          "*geo/uav_visloc/01/drone/01_0311.JPG",
           "*geo/uav_visloc/01/drone/01_0221.JPG",
-          "*geo/uav_visloc/01/drone/01_0321.JPG",
-          "*geo/uav_visloc/01/drone/01_0311.JPG"
+          "*geo/uav_visloc/01/drone/01_0261.JPG",
+          "*geo/uav_visloc/01/drone/01_0281.JPG",
+          "*geo/uav_visloc/01/drone/01_0301.JPG",
+          "*geo/uav_visloc/01/drone/01_0231.JPG"
         ]
       },
       {
@@ -1837,7 +1837,7 @@
         "setPrecision": 0.6667,
         "setRecall": 0.6667,
         "flagged": 3,
-        "latencyMs": 2251,
+        "latencyMs": 2170,
         "top": [
           "*docs/faa/AC_107-2A.pdf",
           "*docs/faa/CFR-2024-title14-part107.pdf",
@@ -1863,7 +1863,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 3,
-        "latencyMs": 2036,
+        "latencyMs": 2048,
         "top": [
           "*docs/faa/AC_107-2A.pdf",
           "*docs/faa/CFR-2024-title14-part107.pdf",
@@ -1888,7 +1888,7 @@
         "setPrecision": 0.6,
         "setRecall": 1,
         "flagged": 5,
-        "latencyMs": 2069,
+        "latencyMs": 2084,
         "top": [
           "docs/cn/uav_flight_regulation_2023.doc",
           "*docs/faa/CFR-2024-title14-part107.pdf",
@@ -1913,7 +1913,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 3,
-        "latencyMs": 2076,
+        "latencyMs": 2031,
         "top": [
           "*docs/faa/CFR-2024-title14-part107.pdf",
           "*docs/faa/AC_107-2A.pdf",
@@ -1939,7 +1939,7 @@
         "setPrecision": 1,
         "setRecall": 0.6667,
         "flagged": 2,
-        "latencyMs": 2017,
+        "latencyMs": 2227,
         "top": [
           "*docs/faa/AC_107-2A.pdf",
           "*docs/faa/CFR-2024-title14-part107.pdf",
@@ -1965,7 +1965,7 @@
         "setPrecision": 1,
         "setRecall": 0.5,
         "flagged": 1,
-        "latencyMs": 1907,
+        "latencyMs": 1960,
         "top": [
           "*docs/faa/AC_107-2A.pdf",
           "docs/cn/uav_flight_regulation_2023.doc",
@@ -1991,7 +1991,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 2164,
+        "latencyMs": 2208,
         "top": [
           "*docs/cn/uav_flight_regulation_2023.doc",
           "docs/faa/AC_107-2A.pdf",
@@ -2017,7 +2017,7 @@
         "setPrecision": 0.3333,
         "setRecall": 1,
         "flagged": 3,
-        "latencyMs": 2077,
+        "latencyMs": 2161,
         "top": [
           "*docs/cn/uav_flight_regulation_2023.doc",
           "docs/faa/AC_107-2A.pdf",
@@ -2041,7 +2041,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 2264,
+        "latencyMs": 2277,
         "top": [
           "*docs/cn/uav_flight_regulation_2023.doc",
           "docs/faa/AC_107-2A.pdf",
@@ -2066,7 +2066,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 2054,
+        "latencyMs": 1965,
         "top": [
           "*docs/uk/pdra01_operations_manual_template.docx",
           "docs/cn/uav_flight_regulation_2023.doc",
@@ -2091,7 +2091,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 2070,
+        "latencyMs": 2109,
         "top": [
           "*docs/geo_text/ne_10m_airports.geojson",
           "docs/cn/uav_flight_regulation_2023.doc"
@@ -2111,7 +2111,7 @@
         "setPrecision": 1,
         "setRecall": 1,
         "flagged": 1,
-        "latencyMs": 2355,
+        "latencyMs": 3292,
         "top": [
           "*docs/geo_text/ne_10m_populated_places.geojson",
           "docs/cn/uav_flight_regulation_2023.doc",
@@ -2131,10 +2131,10 @@
       {
         "type": "object",
         "n": 12,
-        "precision": 0.6863,
-        "recall": 0.6659,
-        "setPrecision": 0.5665,
-        "setRecall": 0.6633
+        "precision": 0.806,
+        "recall": 0.7574,
+        "setPrecision": 0.75,
+        "setRecall": 0.6831
       },
       {
         "type": "remote_sensing",
@@ -2148,7 +2148,7 @@
         "type": "spatial",
         "n": 8,
         "precision": 0.8208,
-        "recall": 0.7989,
+        "recall": 0.8136,
         "setPrecision": 0.8495,
         "setRecall": 0.7376
       },
@@ -2165,24 +2165,24 @@
         "n": 6,
         "precision": 1,
         "recall": 1,
-        "setPrecision": 0.6111,
+        "setPrecision": 0.6667,
         "setRecall": 0.7778
       }
     ],
-    "precision": 0.8655,
-    "recall": 0.8572,
-    "p5": 0.496,
-    "p10": 0.35,
-    "r5": 0.7093,
-    "r10": 0.7877,
-    "setPrecision": 0.7319,
-    "setRecall": 0.7664,
+    "precision": 0.8942,
+    "recall": 0.8816,
+    "p5": 0.524,
+    "p10": 0.372,
+    "r5": 0.7312,
+    "r10": 0.81,
+    "setPrecision": 0.7826,
+    "setRecall": 0.7712,
     "latencyMs": {
       "n": 50,
-      "mean": 1553.04,
-      "median": 1531,
-      "p90": 2439,
-      "max": 3372
+      "mean": 1576.22,
+      "median": 1717.5,
+      "p90": 2627,
+      "max": 3292
     }
   },
   "qa": {
@@ -2197,19 +2197,19 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 8663
+        "latencyMs": 6220
       },
       {
         "id": "qa02",
         "category": "document",
         "question": "按照《无人驾驶航空器飞行管理暂行条例》，微型无人驾驶航空器需要满足哪些性能指标？",
         "reference": "空机重量小于0.25千克，最大飞行真高不超过50米，最大平飞速度不超过40千米/小时，无线电发射设备符合微功率短距离技术要求，全程可以随时人工介入操控。",
-        "answer": "根据《无人驾驶航空器飞行管理暂行条例》，微型无人驾驶航空器需满足以下性能指标：1. 空机重量小于0.25千克；2. 最大飞行真高不超过50米；3. 最大平飞速度不超过40千米/小时；4. 无线电发射设备符合微功率短距离技术要求；5. 全程可以随时人工介入操控。[1][2]",
+        "answer": "根据《无人驾驶航空器飞行管理暂行条例》第六十二条，微型无人驾驶航空器需满足以下性能指标：1. 空机重量小于0.25千克；2. 最大飞行真高不超过50米；3. 最大平飞速度不超过40千米/小时；4. 无线电发射设备符合微功率短距离技术要求；5. 全程可以随时人工介入操控。[1][2]",
         "correct": true,
-        "grade": 2,
+        "grade": 1.999,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 9329
+        "latencyMs": 7522
       },
       {
         "id": "qa03",
@@ -2221,7 +2221,7 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 8605
+        "latencyMs": 6541
       },
       {
         "id": "qa04",
@@ -2233,7 +2233,7 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 8431
+        "latencyMs": 6442
       },
       {
         "id": "qa05",
@@ -2245,7 +2245,7 @@
         "grade": 1.999,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5837
+        "latencyMs": 5522
       },
       {
         "id": "qa06",
@@ -2257,7 +2257,7 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5399
+        "latencyMs": 5620
       },
       {
         "id": "qa07",
@@ -2269,79 +2269,79 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5150
+        "latencyMs": 5084
       },
       {
         "id": "qa08",
         "category": "document",
         "question": "什么情况下农用无人驾驶航空器作业无需取得运营合格证？",
         "reference": "使用最大起飞重量不超过150千克的农用无人驾驶航空器，在农林牧渔区域上方的适飞空域内从事农林牧渔作业飞行活动。",
-        "answer": "使用最大起飞重量不超过150千克的农用无人驾驶航空器，在农林牧渔区域上方的适飞空域内从事农林牧渔作业飞行活动（即常规农用无人驾驶航空器作业飞行活动），无需取得运营合格证。[1]",
+        "answer": "使用最大起飞重量不超过150千克的农用无人驾驶航空器，在农林牧渔区域上方的适飞空域内从事农林牧渔作业飞行活动（即常规农用无人驾驶航空器作业飞行活动）时，无需取得运营合格证。[1]",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5463
+        "latencyMs": 5014
       },
       {
         "id": "qa09",
         "category": "document",
         "question": "哪些民用无人驾驶航空器的操控人员需要取得操控员执照？",
         "reference": "操控小型、中型、大型民用无人驾驶航空器飞行的人员。",
-        "answer": "操控小型、中型、大型民用无人驾驶航空器飞行的人员需要取得操控员执照[1]。以下人员无需取得：操控微型、轻型民用无人驾驶航空器飞行的人员[1][2]；从事常规农用无人驾驶航空器作业飞行活动的人员（但需经培训考核合格后取得操作证书）[1]。",
+        "answer": "操控小型、中型、大型民用无人驾驶航空器飞行的人员需要取得操控员执照[1]。需同时具备以下条件：完全民事行为能力；接受安全操控培训并经考核合格；无可能影响操控行为的疾病病史及吸毒记录；近5年内无特定故意犯罪刑事处罚记录[1]。\n\n以下人员无需取得操控员执照：\n1. 从事常规农用无人驾驶航空器作业飞行活动的人员（但需经培训考核后取得操作证书）[1]；\n2. 操控微型、轻型民用无人驾驶航空器飞行的人员（但应熟练掌握操作方法并了解风险警示信息和管理制度）[1][2]。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6026
+        "latencyMs": 6666
       },
       {
         "id": "qa10",
         "category": "document",
         "question": "为保障大型活动临时增加的管制空域，地方政府需要提前多久发布公告？",
         "reference": "在临时增加的管制空域生效24小时前。",
-        "answer": "为保障国家重大活动以及其他大型活动临时增加的管制空域，地方政府需要在临时增加的管制空域生效24小时前发布公告。[1]",
+        "answer": "为保障国家重大活动以及其他大型活动临时增加的管制空域，设区的市级以上地方人民政府需要在临时增加的管制空域生效24小时前发布公告。[1]",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5346
+        "latencyMs": 5014
       },
       {
         "id": "qa11",
         "category": "document",
         "question": "美国 Part 107 规定小型无人机的最大飞行高度是多少？",
         "reference": "距地面不超过400英尺；在建筑物400英尺半径内飞行时，可以高于地面400英尺，但不得超过建筑物顶部以上400英尺。",
-        "answer": "美国 Part 107 规定小型无人机的最大飞行高度为离地高度（AGL）400英尺。例外条件：若在建筑物400英尺半径范围内飞行，则不得超过该建筑物最高点上方400英尺[1]。",
+        "answer": "美国 Part 107 规定小型无人机的最大飞行高度为高于地面（AGL）400英尺。例外情况：若在建筑物400英尺半径范围内飞行，则不得超过该建筑物最高点上方400英尺[1]。",
         "correct": true,
-        "grade": 2,
+        "grade": 1.998,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5285
+        "latencyMs": 5171
       },
       {
         "id": "qa12",
         "category": "document",
         "question": "Part 107 对小型无人机的地速上限是多少？",
         "reference": "87节（100英里/小时）。",
-        "answer": "Part 107 规定小型无人机的地速上限为 87 节（100 英里/小时）。依据为 CFR Title 14 Part 107 明确规定地速不得超过 87 knots (100 mph)[2]，AC 107-2A 也重申了该限制[1][3]。",
+        "answer": "Part 107 规定小型无人机的地速上限为87节（100英里/小时）[2]。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6888
+        "latencyMs": 4609
       },
       {
         "id": "qa13",
         "category": "document",
         "question": "Part 107 要求小型无人机与云保持多远的距离？",
         "reference": "在云下方至少500英尺，与云的水平距离至少2000英尺。",
-        "answer": "Part 107 要求小型无人机与云保持的最小距离为：云下方至少500英尺，水平方向至少2000英尺。[2][3]",
+        "answer": "Part 107 要求小型无人机与云保持的最小距离为：云层下方至少500英尺，水平方向至少2000英尺。[2][3]",
         "correct": true,
         "grade": 1.999,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5770
+        "latencyMs": 5064
       },
       {
         "id": "qa14",
@@ -2353,103 +2353,103 @@
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6327
+        "latencyMs": 5460
       },
       {
         "id": "qa15",
         "category": "document",
         "question": "申请带小型无人机等级的远程驾驶员证书，最低年龄是多少？",
         "reference": "至少16岁。",
-        "answer": "申请带小型无人机等级的远程驾驶员证书（Remote Pilot Certificate with a small UAS rating），最低年龄为16岁。依据：§ 107.61规定申请人必须年满16岁[1][2]。",
+        "answer": "申请带小型无人机等级的远程驾驶员证书（Remote Pilot Certificate with a small UAS rating），最低年龄为16岁。依据：根据§ 107.61的资格要求，申请人必须年满16岁[1][2]。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6996
+        "latencyMs": 5389
       },
       {
         "id": "qa16",
         "category": "document",
         "question": "发生需要报告的安全事件后，远程机长要在多少天内向 FAA 报告？",
         "reference": "不晚于运行后10个日历日。",
-        "answer": "远程机长（remote pilot in command）必须在发生需要报告的安全事件后10个日历日（calendar days）内向FAA报告。依据：§107.9规定，符合严重人身伤害、失去意识或财产损失等标准的操作，须在不超过10个日历日内报告[1][4]。",
+        "answer": "远程机长（remote pilot in command）必须在发生符合报告条件的安全事件后10个日历日（calendar days）内向FAA报告。依据为§107.9规定，涉及人员重伤、失去意识或财产损失达500美元及以上的操作，须在10个日历日内上报[1][2][3]。",
         "correct": true,
-        "grade": 1.998,
+        "grade": 1.994,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6201
+        "latencyMs": 5860
       },
       {
         "id": "qa17",
         "category": "document",
         "question": "远程驾驶员要保持资格，需要在多长时间内完成知识考试或复训？",
         "reference": "前24个日历月内。",
-        "answer": "远程驾驶员要保持资格，必须在通过初始知识考试或完成初始知识培训后的24个日历月内成功完成复训[1]。根据§107.65规定，在前24个日历月内需完成以下任一事项：(a)通过初始航空知识考试；(b)完成复训；(c)若持有第61部颁发的飞行员执照（学生飞行员除外）并满足飞行审查要求，则完成相关培训[2][4]。",
+        "answer": "远程驾驶员要保持资格，需要在通过初始知识考试或完成初始知识培训后的24个日历月（calendar months）内成功完成复训。[1][2] 依据：§107.65规定，除非在前24个日历月内通过了初始航空知识考试、完成了复训，或持有第61部飞行员执照并完成了相应训练，否则不得行使小型无人机机长的权利。[2][4]",
         "correct": true,
-        "grade": 1.999,
+        "grade": 1.998,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6457
+        "latencyMs": 6959
       },
       {
         "id": "qa18",
         "category": "document",
         "question": "Part 107 夜间运行时，对防撞灯有什么要求？",
         "reference": "无人机要有点亮的防撞灯，可见距离至少3法定英里，闪烁频率足以避免碰撞。",
-        "answer": "Part 107 夜间运行时，对防撞灯的要求如下：\n1. 必须开启防撞灯，且至少在3法定英里（statute miles）外可见 [1][2]。\n2. 闪烁频率必须足以避免碰撞 [1][2]。\n3. 远程机长（remote PIC）可根据运行条件降低灯光强度，但不得关闭防撞灯 [1][3]。\n4. 远程机长可依据制造商声明确认防撞灯满足3法定英里可见要求，但最终仍由机长负责验证其正常工作、可见距离及闪烁频率达标 [2]。\n5. 如需豁免该要求，可申请豁免证书（CoW），须充分描述拟议运行并证明可安全实施 [4]。",
+        "answer": "Part 107 夜间运行时，对防撞灯的要求如下：\n1. 必须开启防撞灯，且至少在3法定英里（statute miles）外可见 [1][2]。\n2. 闪光频率必须足以避免碰撞 [1][2]。\n3. 远程机长（remote PIC）可根据运行条件降低灯光强度，但不得关闭防撞灯 [1][3]。\n4. 远程机长可依赖制造商关于防撞灯可见距离达3英里的声明，但最终仍由机长负责验证其正常工作、可见距离及闪光频率符合要求 [2]。\n5. 如需豁免该要求，可申请豁免证书（CoW），须充分描述拟议运行并证明其安全性 [4]。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 7649
+        "latencyMs": 9030
       },
       {
         "id": "qa19",
         "category": "document",
         "question": "小型无人机遇到其他航空器时的通行权规则是什么？",
         "reference": "必须给所有航空器、空中飞行器以及发射和再入飞行器让路，不得从其上方、下方或前方穿越，除非保持足够间隔。",
-        "answer": "小型无人机遇到其他航空器时的通行权（避让）规则如下：\n\n1. **必须让行所有航空器**：小型无人机必须向所有航空器、空中飞行器和发射/再入飞行器让出通行权，且不得从其上方、下方或前方通过，除非已保持足够安全距离[1]。远程机长（Remote PIC）也必须始终向有人驾驶航空器让行[3][5]。\n2. **国内法规避让规则**：操控无人驾驶航空器应避让有人驾驶航空器、无动力装置的航空器以及地面和水上交通工具；单架飞行应避让集群飞行；微型无人驾驶航空器应避让其他无人驾驶航空器[2][4]。",
+        "answer": "小型无人机遇到其他航空器时的通行权（避让）规则如下：\n\n1. **美国法规（CFR Part 107）**：小型无人机必须向所有航空器、空中飞行器和发射/再入飞行器让行。让行意味着不得从对方上方、下方或前方通过，除非已保持足够安全距离[1]。远程机长必须向包括机场地面运行在内的所有其他航空器让行，且始终须向有人驾驶航空器让行[2][5]。\n\n2. **中国法规**：操控无人驾驶航空器应遵守以下避让规则：（一）避让有人驾驶航空器、无动力装置的航空器以及地面、水上交通工具；（二）单架飞行避让集群飞行；（三）微型无人驾驶航空器避让其他无人驾驶航空器[3][4]。此外，实施超视距飞行的，应当掌握飞行空域内其他航空器的飞行动态，采取避免相撞的措施[3]。",
         "correct": true,
-        "grade": 1.999,
+        "grade": 1.998,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 7875
+        "latencyMs": 8339
       },
       {
         "id": "qa20",
         "category": "document",
         "question": "Part 107 对最低飞行能见度有什么要求？",
         "reference": "从控制站位置观测的飞行能见度不低于3法定英里。",
-        "answer": "Part 107 要求从控制站位置观察的最低飞行能见度不得小于3法定英里（statute miles）[1][2][3]。其中",
+        "answer": "Part 107 要求从控制站位置观测的最低飞行能见度不得小于3法定英里（statute miles）[1][2][3]。该能见度是指从控制站起，白天能看见并识别显著无灯光物体、夜间能看见并识别显著有灯光物体的平均斜距[1]。",
         "correct": true,
-        "grade": 1.998,
+        "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 5169
+        "latencyMs": 7123
       },
       {
         "id": "qa21",
         "category": "document",
         "question": "英国 PDRA01 运行手册模板规定的最大飞行高度是多少？",
         "reference": "距地表不超过120米（400英尺）。",
-        "answer": "英国 PDRA01 运行手册模板规定的最大飞行高度为距地面不超过120米（400英尺）。依据：文档明确指出",
+        "answer": "根据英国PDRA01运行手册模板规定，最大飞行高度不得超过距地面120米（400英尺）。[2] 例外情况：若障碍物负责人提出请求、无人机水平距离障碍物不超过50米且始终保持视距内（VLOS）飞行，则允许飞越高于105米的障碍物上方最多15米。[2]",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 6216
+        "latencyMs": 7085
       },
       {
         "id": "qa22",
         "category": "document",
         "question": "按照英国 PDRA01，无人机与无关人员要保持多远距离？",
         "reference": "飞行中与任何无关人员保持至少50米；起飞和降落时与无关人员保持至少30米。",
-        "answer": "按照英国PDRA01，无人机与无关人员（uninvolved people）需保持的最小距离为50米[2][3]；但在起飞和降落期间，与无关人员的最小距离为30米[3]。",
+        "answer": "按照英国PDRA01，无人机与无关人员（uninvolved people）的距离要求如下：\n1. 一般飞行时，须保持至少50米的最小距离[2][3]。\n2. 在起飞和降落期间，须保持至少30米的距离[3]。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 7159
+        "latencyMs": 6756
       },
       {
         "id": "qa23",
@@ -2461,7 +2461,7 @@
         "grade": 1.97,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4079
+        "latencyMs": 4890
       },
       {
         "id": "qa24",
@@ -2473,31 +2473,31 @@
         "grade": 2,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4572
+        "latencyMs": 4146
       },
       {
         "id": "qa25",
         "category": "image",
         "question": "航拍图像 0000026_03000_d_0000030.jpg 中数量最多的目标是什么？",
         "reference": "小汽车（约10个）。",
-        "answer": "数量最多的目标是小汽车，共11辆。",
+        "answer": "航拍图像 0000026_03000_d_0000030.jpg 中数量最多的目标是小汽车，共有 11 辆。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4334
+        "latencyMs": 3990
       },
       {
         "id": "qa26",
         "category": "image",
         "question": "航拍图像 0000249_02900_d_0000009.jpg 里有公交车吗？",
         "reference": "有，可见约2辆公交车。",
-        "answer": "有，画面中包含2辆公交车。",
+        "answer": "有，画面中可见2辆公交车。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 6149
+        "latencyMs": 3663
       },
       {
         "id": "qa27",
@@ -2509,79 +2509,79 @@
         "grade": 1.051,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 5276
+        "latencyMs": 3713
       },
       {
         "id": "qa28",
         "category": "image",
         "question": "航拍图像 0000001_05499_d_0000010.jpg 里有公交车吗？",
         "reference": "没有公交车，画面中主要是小汽车。",
-        "answer": "没有。根据证据，该图像（0000001_05499_d_0000010.jpg）中仅包含小汽车、面包车、摩托车等车辆，未检测到公交车。",
+        "answer": "没有。根据证据[2]，该图像（0000001_05499_d_0000010.jpg）中仅包含72辆小汽车、2辆面包车、27辆摩托车等目标，未检测到公交车。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 3958
+        "latencyMs": 4723
       },
       {
         "id": "qa29",
         "category": "video",
         "question": "视频 uav0000086_00000_v 中最多的目标类型是什么？",
         "reference": "行人，平均每帧约27个。",
-        "answer": "视频中最多的目标类型是行人，各关键帧中最大数量为34。",
+        "answer": "视频中最多的目标类型是行人，各关键帧中最大数量为31。",
         "correct": true,
-        "grade": 1.67,
+        "grade": 1.886,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 5170
+        "latencyMs": 5853
       },
       {
         "id": "qa30",
         "category": "video",
         "question": "视频 uav0000086_00000_v 中有小汽车吗？",
         "reference": "没有。画面里主要是行人、人群、摩托车和自行车，没有小汽车。",
-        "answer": "视频中没有小汽车。根据证据统计，该视频各关键帧中仅检测到行人、人员（非站立）、篮球场、摩托车和自行车，未包含小汽车目标。",
+        "answer": "没有。根据证据统计，该视频各关键帧中仅检测到行人、人员（非站立）、篮球场、摩托车和自行车，未包含小汽车目标 [1][2][3][4][5]。",
         "correct": true,
-        "grade": 1.999,
+        "grade": 1.996,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 5489
+        "latencyMs": 7130
       },
       {
         "id": "qa31",
         "category": "video",
         "question": "视频 uav0000305_00000_v 中是否出现了公交车？",
         "reference": "出现了，公交车在100%的帧中可见。",
-        "answer": "是，视频中出现了公交车。根据素材统计，公交车最多出现1辆 [1]；在第0.0秒和第6.5秒的关键帧中均检测到1辆绿色公交车 [2, 3]。",
+        "answer": "是，视频中出现了公交车。根据素材统计，公交车最多出现1辆[1]；在第0.0秒和第6.5秒的关键帧中，均明确检测到画面中有一辆绿色公交车[2][3]。",
         "correct": true,
-        "grade": 1.999,
+        "grade": 1.998,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 5407
+        "latencyMs": 6724
       },
       {
         "id": "qa32",
         "category": "video",
         "question": "视频 M0202 是在什么光照或天气条件下拍摄的？",
         "reference": "夜间拍摄。",
-        "answer": "视频 M0202 是在夜间、晴朗的天气条件下拍摄的。依据是关键帧标签中包含“夜景”、“夜间”和“晴”。",
+        "answer": "视频 M0202 是在夜间、晴朗的光照和天气条件下拍摄的。",
         "correct": true,
-        "grade": 2,
+        "grade": 1.986,
         "method": "judge",
         "intent": "metadata",
-        "latencyMs": 4238
+        "latencyMs": 4731
       },
       {
         "id": "qa33",
         "category": "video",
         "question": "视频 M1004 拍摄时的天气条件是什么？",
         "reference": "雾天。",
-        "answer": "视频 M1004 拍摄时的天气条件存在变化或标注不一致：前期关键帧（第0.0秒至第8.0秒）标注为“晴” [4, 5, 6, 7, 8]；后期关键帧（第10.0秒）因镜头受水滴或污渍影响产生光斑眩光，被标注为“雨天” [9, 10]。",
+        "answer": "视频 M1004 拍摄时为夜间雨天。依据是第 10.0 秒的关键帧显示镜头受水滴或污渍影响产生明显光斑衍射/眩光，且对应标签明确标注为“雨天” [8][10]；尽管部分早期帧（如第 0.0 秒、5.0 秒）标签标注为“晴”，但结合画面中的水滴光斑特征及后续帧的雨天标签，可判定实际天气为雨天。",
         "correct": false,
-        "grade": 0.004,
+        "grade": 0.012,
         "method": "judge",
         "intent": "metadata",
-        "latencyMs": 4904
+        "latencyMs": 6040
       },
       {
         "id": "qa34",
@@ -2593,7 +2593,7 @@
         "grade": 0.136,
         "method": "judge",
         "intent": "metadata",
-        "latencyMs": 2620
+        "latencyMs": 3442
       },
       {
         "id": "qa35",
@@ -2605,7 +2605,7 @@
         "grade": 1.069,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4869
+        "latencyMs": 5631
       },
       {
         "id": "qa36",
@@ -2617,7 +2617,7 @@
         "grade": 1.027,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4311
+        "latencyMs": 5526
       },
       {
         "id": "qa37",
@@ -2629,19 +2629,19 @@
         "grade": 0.006,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4607
+        "latencyMs": 5572
       },
       {
         "id": "qa38",
         "category": "remote_sensing",
         "question": "遥感影像 P6347 是什么类型的区域，有什么典型目标？",
         "reference": "居民区，有大量小型车辆和游泳池（约25辆车、21个游泳池）。",
-        "answer": "遥感影像 P6347 是被茂密树林环绕的低密度郊区住宅区（居民区）。典型目标包括小汽车（26个）和游泳池（21个），此外还包含蜿蜒的道路、独立房屋及森林。",
+        "answer": "遥感影像 P6347 是被茂密树林环绕的低密度郊区住宅区（居民区）。典型目标包括小汽车（26个）和游泳池（21个），此外还包含蜿蜒的城市道路、独立房屋及森林。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 5988
+        "latencyMs": 7575
       },
       {
         "id": "qa39",
@@ -2653,7 +2653,7 @@
         "grade": 0,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4971
+        "latencyMs": 6432
       },
       {
         "id": "qa40",
@@ -2665,7 +2665,7 @@
         "grade": 1.991,
         "method": "judge",
         "intent": "visual",
-        "latencyMs": 4617
+        "latencyMs": 5899
       },
       {
         "id": "qa41",
@@ -2677,31 +2677,31 @@
         "geoErrorM": 96.4,
         "method": "geo",
         "intent": "location",
-        "latencyMs": 5372
+        "latencyMs": 6416
       },
       {
         "id": "qa42",
         "category": "geo",
         "question": "航拍图像 01_0401.JPG 是在什么位置拍摄的？给出经纬度。",
         "reference": "约北纬29.70880°、东经115.98303°。",
-        "answer": "航拍图像 01_0401.JPG 的拍摄位置为北纬29.71031°、东经115.97684°。该坐标来源为 visual-refined，误差约 150 米。",
+        "answer": "航拍图像 01_0401.JPG 的拍摄位置为北纬 29.71031°、东经 115.97684°。该坐标来源于 visual-refined 定位，误差约 150 米。",
         "correct": false,
         "geoErrorM": 620.6,
         "method": "geo",
         "intent": "location",
-        "latencyMs": 5932
+        "latencyMs": 6467
       },
       {
         "id": "qa43",
         "category": "geo",
         "question": "航拍图像 01_0701.JPG 是在什么位置拍摄的？给出经纬度。",
         "reference": "约北纬29.73304°、东经115.99124°。",
-        "answer": "航拍图像 01_0701.JPG 的拍摄位置为北纬29.73337°、东经115.99081°。该坐标来源为 visual-refined，误差约 150 米。",
+        "answer": "航拍图像 01_0701.JPG 的拍摄位置为北纬29.73337°、东经115.99081°。该坐标来源于 visual-refined 定位，误差约 150 米。",
         "correct": true,
         "geoErrorM": 55.4,
         "method": "geo",
         "intent": "location",
-        "latencyMs": 5844
+        "latencyMs": 6646
       },
       {
         "id": "qa44",
@@ -2713,79 +2713,79 @@
         "grade": 2,
         "method": "judge",
         "intent": "metadata",
-        "latencyMs": 4875
+        "latencyMs": 6166
       },
       {
         "id": "qa45",
         "category": "geo",
         "question": "drone_palos_verdes 视频的起飞点在哪里？",
         "reference": "美国加利福尼亚州帕洛斯弗迪斯（Palos Verdes）海岸，约北纬33.7332°、西经118.3347°。",
-        "answer": "起飞点位于北纬33.73322°、西经118.33468°，定位来源为telemetry，误差约5米。",
+        "answer": "起飞点位于北纬33.73322°、西经118.33468°，定位来源为telemetry，误差约5米。该坐标对应视频第0.0秒关键帧位置，画面显示为低角度拍摄的居民区街道，有一辆红色皮卡车驶过路口 [1][2]。",
         "correct": true,
         "geoErrorM": 0.3,
         "method": "geo",
         "intent": "location",
-        "latencyMs": 4416
+        "latencyMs": 4924
       },
       {
         "id": "qa46",
         "category": "geo",
         "question": "drone_palos_verdes 视频是哪天拍摄的？",
         "reference": "2025年2月17日傍晚（美国太平洋时间），对应 UTC 时间 2025年2月18日 01:46 左右。",
-        "answer": "该视频拍摄于2025年2月17日（当地时间 UTC-8 17:46:36），对应UTC时间为2025年2月18日 01:46:36。",
+        "answer": "该视频拍摄于2025年2月17日（当地时间 UTC-8 17:46:36），对应UTC时间为2025年2月18日 01:46:36。依据是文件名时间戳及飞行记录对齐信息。",
         "correct": true,
-        "grade": 1.997,
+        "grade": 1.998,
         "method": "judge",
         "intent": "metadata",
-        "latencyMs": 3755
+        "latencyMs": 4675
       },
       {
         "id": "qa47",
         "category": "cross",
         "question": "按美国 Part 107 的高度限制，drone_palos_verdes 这次飞行的最大高度是否超限？",
         "reference": "没有超过。飞行记录中相对起飞点的最大高度为393英尺，Part 107 上限为距地面400英尺。",
-        "answer": "未超限。该次飞行相对起飞点最大高度为 393 英尺（119.8 米），低于美国 Part 107 规定的 400 英尺离地高度上限。",
+        "answer": "未超限。该次飞行相对起飞点最大高度为 393 英尺（119.8 米），低于美国 Part 107 规定的 400 英尺 AGL 高度限制。",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "cross",
-        "latencyMs": 8537
+        "latencyMs": 8775
       },
       {
         "id": "qa48",
         "category": "cross",
         "question": "如果在中国，drone_palos_verdes 这次飞行的最大高度是否进入了真高120米以上的管制空域？",
         "reference": "没有进入。最大高度约393英尺，约合119.8米，略低于120米（按飞行记录中相对起飞点的高度计算）。",
-        "answer": "未进入。该次飞行相对起飞点最大高度为119.8米，低于真高120米的管制空域划设标准。",
+        "answer": "未进入。根据飞行记录，该次飞行相对起飞点的最大高度为119.8米，低于中国法规规定的真高120米管制空域阈值（119.8米 \u003c 120米）。",
         "correct": true,
         "grade": 1.999,
         "method": "judge",
         "intent": "cross",
-        "latencyMs": 8194
+        "latencyMs": 9320
       },
       {
         "id": "qa49",
         "category": "cross",
         "question": "视频 M0202 是夜间拍摄的。如果在美国按 Part 107 进行这样的夜间飞行，无人机需要满足什么灯光要求？",
         "reference": "需要点亮防撞灯，可见距离至少3法定英里，闪烁频率足以避免碰撞。",
-        "answer": "根据美国 Part 107 规定，夜间飞行的小型无人机必须配备防撞灯（anti-collision lighting），该灯光需在至少 3  statute miles（约 4.8 公里）范围内可见，且闪烁频率足以避免碰撞。远程飞行员可根据安全需要降低灯光强度，但不得关闭 [2][3][4]。",
+        "answer": "根据 Part 107 夜间飞行要求，无人机必须满足以下灯光条件：\n1. 必须开启防撞灯（anti-collision lighting）；[2][3]\n2. 防撞灯必须在至少3法定英里（statute miles）外可见；[2][3][4]\n3. 防撞灯的闪烁频率必须足以避免碰撞；[2][3]\n4. 远程机长（remote PIC）可根据运行条件降低灯光强度，但不得关闭防撞灯。[2]\n\n远程飞行员可参考制造商关于防撞灯可见距离达3英里的声明，但最终仍由飞行员负责验证灯光正常工作且满足上述要求。[3]",
         "correct": true,
         "grade": 2,
         "method": "judge",
         "intent": "cross",
-        "latencyMs": 11805
+        "latencyMs": 11104
       },
       {
         "id": "qa50",
         "category": "cross",
         "question": "英国 PDRA01 和美国 Part 107 规定的最大飞行高度分别是多少？是否一致？",
         "reference": "英国 PDRA01 为距地表120米（400英尺），美国 Part 107 为距地面400英尺，两者基本一致。",
-        "answer": "英国PDRA01规定的最大飞行高度为地表以上120米或400英尺[2]。美国Part 107规定的最大飞行高度为地面以上400英尺（AGL），若在建筑物400英尺半径内飞行则可高于400英尺但不超过建筑物最高点上方400英尺[3][4]。两者在常规最大飞行高度上一致，均为400英尺（约120米）[2][3][4]。",
+        "answer": "英国PDRA01规定的最大飞行高度为地表以上120米或400英尺[2]。美国Part 107规定的最大飞行高度为地面以上400英尺（AGL），若在建筑物400英尺半径内飞行则可高于400英尺AGL但不超过建筑物最高点上方400英尺[3][4]。两者在常规最大飞行高度上基本一致，均为400英尺；但PDRA01额外给出了120米的公制等效值，且对超高障碍物的豁免条件不同（PDRA01允许在障碍物负责人请求下、水平距离不超过50米时高出105米以上障碍物最多15米）[2][3]。",
         "correct": true,
-        "grade": 1.999,
+        "grade": 1.996,
         "method": "judge",
         "intent": "document",
-        "latencyMs": 8496
+        "latencyMs": 8704
       }
     ],
     "byCategory": [
@@ -2829,13 +2829,13 @@
     "correct": 42,
     "total": 50,
     "accuracy": 0.84,
-    "meanGrade": 1.759,
+    "meanGrade": 1.763,
     "latencyMs": {
       "n": 50,
-      "mean": 5980.52,
-      "median": 5476,
-      "p90": 8496,
-      "max": 11805
+      "mean": 6107.34,
+      "median": 5879.5,
+      "p90": 8339,
+      "max": 11104
     }
   },
   "definitions": {

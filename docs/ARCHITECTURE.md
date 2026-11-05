@@ -30,7 +30,7 @@
    - 图片和遥感影像各一帧；大幅 GeoTIFF 用自带读取器生成概览图。
    - 每帧计算多模态向量（`tongyi-embedding-vision-plus`，1152 维）；相邻视频关键帧相似度 ≥ 0.97 视为重复画面并丢弃。
 3. **分析（analyze）**：
-   - **目标框**：配置了检测服务（`DETECTOR_BASE_URL`，见 [detector/](../detector/README.md)）时，无人机照片（原图）和视频关键帧先送检测模型（VisDrone 训练的 YOLOv9e，10 类），框和计数以检测结果为准。检测服务不可用或未配置时，由 VLM 输出框（`bbox_2d` 为 0~1000 相对坐标，实测与像素标注吻合到 1~3 px）。遥感影像的类别（船只、储油罐、桥梁等）不在检测模型的类别中，仍由 VLM 画框。
+   - **目标框**：配置了检测服务（`DETECTOR_BASE_URL`，见 [detector/](../detector/README.md)）时，无人机照片（原图）和视频关键帧先送检测模型（在 VisDrone 上微调的 YOLO11x 和 YOLOv9e 集成，10 类），框和计数以检测结果为准。检测服务不可用或未配置时，由 VLM 输出框（`bbox_2d` 为 0~1000 相对坐标，实测与像素标注吻合到 1~3 px）。遥感影像的类别（船只、储油罐、桥梁等）不在检测模型的类别中，仍由 VLM 画框。
    - **描述**：每帧一次 VLM 调用，返回 JSON：中文描述、场景标签、昼夜/天气/视角/高度、各类计数、地标、画面文字、地点猜测。有检测结果时，提示词中给出检测计数，VLM 不再输出框，描述中的数量与框一致；这一步从约 65 秒、4100 个输出 token 降到约 10 秒、260 个。
    - 框换算成关键帧像素坐标存入 `detections`（`source` 为 `detector` 或 `vlm`）。描述、标签、计数、地标、文字拼成检索文本并计算文本向量。VLM 不可用时用本地模板描述（尺寸、亮度、时间、位置），并标记待重跑。
 4. **空间对齐（geo）**，按可靠性依次尝试：
@@ -102,7 +102,7 @@
 | 模型 | 接口 | 用途 |
 | :--- | :--- | :--- |
 | `qwen3.8-max` | OpenAI 兼容 `chat/completions`，支持图像输入 | 关键帧描述、地标识别、答案生成；未配置检测服务时也画目标框 |
-| `visdrone-yolov9e`（默认，CPU）或 `multimo-visdrone-yolo11x-1280`（1280 输入微调、三尺度融合，GPU 服务器） | 自带检测服务 `POST {DETECTOR_BASE_URL}/v1/detect`（[detector/](../detector/README.md)） | 无人机照片和视频关键帧的目标框（VisDrone 10 类） |
+| `multimo-visdrone-ensemble`：微调的 YOLO11x + YOLOv9e，各按 1024/1280/1536 推理，加权框融合后由梯度提升树重打分（权重在 `detector/weights/`，Git LFS） | 自带检测服务 `POST {DETECTOR_BASE_URL}/v1/detect`（[detector/](../detector/README.md)） | 无人机照片和视频关键帧的目标框（VisDrone 10 类） |
 | `text-embedding-v4` | OpenAI 兼容 `embeddings`，1024 维 | 关键帧描述与文档片段的向量 |
 | `tongyi-embedding-vision-plus-2026-03-06` | DashScope 原生 `multimodal-embedding`，1152 维，每批 4 张 | 关键帧图像向量、底图切块、视觉定位、以文搜图 |
 | `vllm-sr/d3-ultra` | `POST https://app.vllm-sr.ai/v1/systemone`，与下述 decisions 格式相同 | 意图分类、证据相关性打分、问答裁判 |

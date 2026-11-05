@@ -33,6 +33,8 @@ multimo/
 git clone --recurse-submodules https://github.com/MeVeryHandsome/multimo.git
 ```
 
+检测模型权重（`detector/weights/`，约 230 MB）用 Git LFS 保存，需要先安装 [git-lfs](https://git-lfs.com)；克隆时没有装的话，装好后在仓库中运行 `git lfs pull`（`scripts/demo.sh` 也会自动检查并拉取）。
+
 ```bash
 cd multimo && cp .env.example .env
 ```
@@ -51,13 +53,13 @@ scripts/demo.sh
 docker compose up -d --build
 ```
 
-检测服务默认用 CPU，首次启动会下载约 110 MB 的模型权重（国内可在 `.env` 中把 `DETECTOR_WEIGHTS_URL` 的 `huggingface.co` 换成 `hf-mirror.com`）。有 NVIDIA GPU 时：
+检测服务默认用 CPU 运行仓库里的微调模型（YOLO11x + YOLOv9e，各三个尺度，融合后重打分；评测集准确率 86.1%、漏检率 16.5%），4 核 CPU 每张图约 12 秒，`.env.example` 里有更快的单模型设置。有 NVIDIA GPU 时（每张约 0.13 秒）：
 
 ```bash
 docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
 ```
 
-检测服务部署在另一台 GPU 服务器上时，把 `.env` 里的 `DETECTOR_BASE_URL_DOCKER` 改成它的地址即可。推荐在 GPU 服务器上运行按 1280 输入微调的模型（三尺度融合，漏检率 22.2%，默认 CPU 模型为 25.7%），部署方法见 [detector/README.md](detector/README.md#在-gpu-服务器上部署)。
+检测服务也可以单独部署在另一台 GPU 服务器上，把 `.env` 里的 `DETECTOR_BASE_URL_DOCKER` 改成它的地址即可，见 [detector/README.md](detector/README.md#在-gpu-服务器上部署)。
 
 | 地址 | 内容 |
 | :--- | :--- |
