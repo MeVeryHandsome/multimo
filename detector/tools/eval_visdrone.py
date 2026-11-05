@@ -6,8 +6,11 @@ the other 448 val images, which are used to choose the confidence threshold.
     TESTDATA_DIR=../../testdata python eval_visdrone.py weights.pt 1024 0.5 0.55 0.6
     SPLIT=calib TESTDATA_DIR=../../testdata python eval_visdrone.py weights.pt 1024 0.55 0.56 0.57
 
-Predictions are cached per (weights, imgsz, split) at conf 0.05 in ./preds, so
-thresholds can be swept without re-running the model."""
+Predictions are cached per (TAG or weights folder, imgsz, EXTRA, split) at
+conf 0.05 in ./preds, so thresholds can be swept without re-running the model
+and passes can be fused later with select_op.py. EXTRA=flip runs on the
+horizontally mirrored image, EXTRA=tta uses Ultralytics' built-in test-time
+augmentation, EXTRA=tile2 adds a 2 x 2 grid of overlapping tiles."""
 import json, os, sys, time
 import numpy as np
 
@@ -81,7 +84,20 @@ def predict(weights, imgsz, items, extra=None, split="bench"):
     names = model.names
     out, t0 = {}, time.time()
     for it in items:
-        r = model.predict(os.path.join(TD, it["image"]), imgsz=imgsz, conf=0.05, iou=0.6, max_det=1000,
+        path = os.path.join(TD, it["image"])
+        if extra and extra.startswith("tile"):
+            out[it["id"]] = tiled(model, path, imgsz, int(extra[4:] or 2))
+            continue
+        if extra == "flip":  # horizontally mirrored input, boxes mapped back
+            from PIL import Image, ImageOps
+            im = Image.open(path).convert("RGB")
+            W = im.width
+            r = model.predict(ImageOps.mirror(im), imgsz=imgsz, conf=0.05, iou=0.6, max_det=1000, verbose=False)[0]
+            b = r.boxes
+            out[it["id"]] = [[names[int(c)], [W - x2, y1, W - x1, y2], float(s)]
+                             for c, (x1, y1, x2, y2), s in zip(b.cls.tolist(), b.xyxy.tolist(), b.conf.tolist())]
+            continue
+        r = model.predict(path, imgsz=imgsz, conf=0.05, iou=0.6, max_det=1000,
                           verbose=False, augment=(extra == "tta"))[0]
         b = r.boxes
         out[it["id"]] = [[names[int(c)], [float(x) for x in xyxy], float(s)]
@@ -90,6 +106,34 @@ def predict(weights, imgsz, items, extra=None, split="bench"):
     os.makedirs(os.path.dirname(cache), exist_ok=True)
     json.dump(out, open(cache, "w"))
     return out, tag
+
+
+def tiled(model, path, imgsz, n, overlap=0.2):
+    """Full image plus an n x n grid of overlapping tiles, each predicted at
+    imgsz, merged with class-wise NMS; boxes cut by a tile edge are dropped
+    unless the edge is the image border."""
+    import torch, torchvision
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    W, H = im.size
+    tw, th = int(W / (n - (n - 1) * overlap)), int(H / (n - (n - 1) * overlap))
+    crops = [(0, 0, W, H, False)]
+    for i in range(n):
+        for j in range(n):
+            x0 = min(int(j * tw * (1 - overlap)), W - tw); y0 = min(int(i * th * (1 - overlap)), H - th)
+            crops.append((x0, y0, x0 + tw, y0 + th, True))
+    boxes, scores, cls = [], [], []
+    for x0, y0, x1, y1, is_tile in crops:
+        r = model.predict(im.crop((x0, y0, x1, y1)), imgsz=imgsz, conf=0.05, iou=0.6, max_det=1000, verbose=False)[0]
+        for c, (a, b, cc, d), s in zip(r.boxes.cls.tolist(), r.boxes.xyxy.tolist(), r.boxes.conf.tolist()):
+            if is_tile and ((a < 2 and x0 > 0) or (b < 2 and y0 > 0) or (cc > x1 - x0 - 2 and x1 < W) or (d > y1 - y0 - 2 and y1 < H)):
+                continue
+            boxes.append([a + x0, b + y0, cc + x0, d + y0]); scores.append(s); cls.append(int(c))
+    if not boxes:
+        return []
+    B, S, C = torch.tensor(boxes), torch.tensor(scores), torch.tensor(cls)
+    keep = torchvision.ops.batched_nms(B, S, C, 0.6)
+    return [[model.names[int(C[k])], B[k].tolist(), float(S[k])] for k in keep.tolist()]
 
 
 def main():

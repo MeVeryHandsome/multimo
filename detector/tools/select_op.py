@@ -19,6 +19,9 @@ import sys
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path[:0] = [HERE, os.path.dirname(HERE)]  # fusion.py: next to this file, or in detector/
+from fusion import wbf  # noqa: E402  (the same fusion the service uses)
+
 TD = os.environ.setdefault("TESTDATA_DIR", os.path.join(HERE, "../../testdata"))
 TARGET = float(os.environ.get("TARGET", "0.85"))
 
@@ -38,47 +41,13 @@ def items_for(split):
     return items
 
 
-def iou_np(b, bs):
-    ix = np.clip(np.minimum(b[2], bs[:, 2]) - np.maximum(b[0], bs[:, 0]), 0, None)
-    iy = np.clip(np.minimum(b[3], bs[:, 3]) - np.maximum(b[1], bs[:, 1]), 0, None)
-    inter = ix * iy
-    return inter / ((b[2] - b[0]) * (b[3] - b[1]) + (bs[:, 2] - bs[:, 0]) * (bs[:, 3] - bs[:, 1]) - inter + 1e-9)
-
-
-def wbf(model_preds, thr=0.55):
-    """Weighted box fusion per class; score = mean over models (missing = 0)."""
-    k = len(model_preds)
-    if k == 1:
-        return model_preds[0]
-    allp = sorted([(l, b, s, m) for m, preds in enumerate(model_preds) for l, b, s in preds], key=lambda p: -p[2])
-    out = []
-    for label in {p[0] for p in allp}:
-        clusters = []  # [sum of score * box, sum of score, best score per model]
-        boxes = np.zeros((0, 4))
-        for _, b, s, m in (p for p in allp if p[0] == label):
-            b = np.array(b)
-            if len(clusters):
-                ious = iou_np(b, boxes)
-                j = int(ious.argmax())
-                if ious[j] >= thr:
-                    c = clusters[j]
-                    c[0] += s * b
-                    c[1] += s
-                    c[2][m] = max(c[2][m], s)
-                    boxes[j] = c[0] / c[1]
-                    continue
-            sc = [0.0] * k
-            sc[m] = s
-            clusters.append([s * b, s, sc])
-            boxes = np.vstack([boxes, b])
-        out += [[label, bx.tolist(), sum(c[2]) / k] for c, bx in zip(clusters, boxes)]
-    return out
-
-
 def load(tags, split):
+    """Fused predictions per image; labels outside the 10 VisDrone classes
+    (e.g. "others") are dropped, as the service does."""
     suffix = "_calib" if split == "calib" else ""
+    vocab = set(ev["CLASSES"].values())
     preds = [json.load(open(os.path.join(HERE, "preds", f"{t}{suffix}.json"))) for t in tags]
-    return {i: wbf([p[i] for p in preds]) for i in preds[0]}
+    return {i: wbf([[d for d in p[i] if d[0] in vocab] for p in preds]) for i in preds[0]}
 
 
 def score(preds, items, gts, conf):
@@ -99,7 +68,7 @@ def main():
         items = items_for(split)
         gts = {it["id"]: ev["gt_objects"](os.path.join(TD, it["annotation"])) for it in items}
         data[split] = (load(tags, split), items, gts)
-    for c in np.arange(0.35, 0.90, 0.01):
+    for c in np.arange(0.25, 0.90, 0.01):
         p, m = score(*data["calib"], c)
         if p >= TARGET:
             bp, bm = score(*data["bench"], c)

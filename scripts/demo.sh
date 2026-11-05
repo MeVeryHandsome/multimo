@@ -57,6 +57,21 @@ if [ "$COMPOSE" = 1 ]; then
     exit 1
   fi
   echo ".env 已就绪"
+
+  # Detector weights shipped in detector/weights are stored with Git LFS; a
+  # clone without git-lfs only has small pointer files.
+  real_file() { [ -s "$1" ] && ! head -c 64 "$1" | grep -q "version https://git-lfs"; }
+  weights="$(grep -E '^DETECTOR_WEIGHTS=' .env | tail -1 | cut -d= -f2- || true)"
+  for w in $weights; do
+    for f in ${w//,/ }; do
+      case "$f" in /weights/*) file="detector/weights/${f#/weights/}" ;; *) continue ;; esac
+      if ! real_file "$file" && git lfs version >/dev/null 2>&1; then
+        echo "拉取检测模型权重（Git LFS）"
+        git lfs pull --include "detector/weights/*"
+      fi
+      real_file "$file" || { echo "缺少检测模型权重 $file：安装 git-lfs 后在仓库中运行 git lfs pull" >&2; exit 1; }
+    done
+  done
 fi
 
 if [ "$SKIP_DATA" = 0 ]; then

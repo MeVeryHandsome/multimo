@@ -1,3 +1,5 @@
 preds/
 __pycache__/
 *.pt
+# released weights are versioned with Git LFS (see /.gitattributes)
+!weights/*.pt
