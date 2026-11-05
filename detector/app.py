@@ -31,9 +31,9 @@ import binascii
 import io
 import logging
 import os
+import pickle
 import threading
 import time
-import pickle
 import urllib.request
 
 import torch
